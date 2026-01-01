@@ -1,12 +1,18 @@
+import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
+import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
+import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
+
+
 const products = [
   {
     id: 1,
     name: "Banarsi Sari",
     price: 499,
-    image: "https://www.karagiri.com/cdn/shop/files/KINKHAB-1205-1.jpg?v=1711452218",
-    hoverImage:"https://www.karagiri.com/cdn/shop/files/KINKHAB-1205-1.jpg?v=1711452218",
+    image: RaniPink1,
+    hoverImage:RaniPink3,
     description: "High quality saree",
   },
+  
   {
     id: 2,
     name: "Valvet Saree",

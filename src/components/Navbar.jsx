@@ -18,7 +18,7 @@ export default function Navbar({ cartCount }) {
         <ul className="menu menu-horizontal gap-2">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/products">Products</Link></li>
-          <li><Link to="/supercoin">For Distributers</Link></li>
+          <li><Link to="/distributers">For Distributers</Link></li>
           <li><Link to="/about-us">About Us</Link></li>
         </ul>
       </div>
@@ -37,7 +37,7 @@ export default function Navbar({ cartCount }) {
           >
             <li><Link to="/">Home</Link></li>
             <li><Link to="/products">Products</Link></li>
-            <li><Link to="/supercoin">For Distributers</Link></li>
+            <li><Link to="/distributers">For Distributers</Link></li>
             <li><Link to="/about-us">About Us</Link></li>
           </ul>
         </div>

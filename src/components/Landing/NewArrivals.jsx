@@ -58,7 +58,7 @@ function NewArrivals() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="h-44 sm:h-48 md:h-52 w-full object-cover rounded-t"
+                  className="aspect-3/4 w-full h-64  object-contain rounded-t"
                 />
 
                 {/* NEW Tag */}
