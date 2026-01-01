@@ -1,9 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
-import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
-import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
-
 import {
   ShoppingBag,
   ShieldCheck,
@@ -12,22 +8,35 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
+import { useCart } from "../context/CartContext";
 import products from "../data/products";
 
-export default function ProductDetail({ addToCart }) {
+import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
+import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
+import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
+
+export default function ProductDetail() {
   const { id } = useParams();
+  const { addToCart } = useCart();
+
   const product = products.find((p) => p.id === Number(id));
 
-  const images = product.images || [
-    RaniPink1,
-    RaniPink2,
-    RaniPink3,
-  ];
+  if (!product) {
+    return (
+      <div className="text-center py-20 text-gray-500">
+        Product not found
+      </div>
+    );
+  }
+
+  const images = product.images?.length
+    ? product.images
+    : [RaniPink1, RaniPink2, RaniPink3];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
-  /* Auto slider */
+  /* Auto Slider */
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
@@ -51,8 +60,11 @@ export default function ProductDetail({ addToCart }) {
         <div className="flex flex-col gap-4">
 
           {/* Main Image */}
-          <div className="bg-base-200 rounded-lg overflow-hidden flex items-center justify-center
-                          aspect-[4/5] md:aspect-[3/4] lg:aspect-[16/9]">
+          <div
+            className="bg-base-200 rounded-lg overflow-hidden
+                       flex items-center justify-center
+                       aspect-[4/5] sm:aspect-[3/4] lg:aspect-[16/9]"
+          >
             <img
               src={images[activeIndex]}
               alt={product.name}
@@ -75,7 +87,7 @@ export default function ProductDetail({ addToCart }) {
               >
                 <img
                   src={img}
-                  alt="thumb"
+                  alt="thumbnail"
                   className="h-16 w-16 object-contain"
                 />
               </button>
@@ -94,12 +106,11 @@ export default function ProductDetail({ addToCart }) {
             {product.description}
           </p>
 
-          {/* Price (normal weight) */}
           <p className="text-2xl md:text-3xl font-normal text-gray-800">
             ₹{product.price}
           </p>
 
-          {/* Quantity */}
+          {/* Quantity Selector */}
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">Quantity</span>
             <div className="flex items-center gap-3">
@@ -158,7 +169,6 @@ export default function ProductDetail({ addToCart }) {
             </button>
           </div>
 
-          {/* Footer note */}
           <div className="border-t pt-4 text-sm text-gray-500">
             Crafted with care • Inspired by Indian heritage
           </div>

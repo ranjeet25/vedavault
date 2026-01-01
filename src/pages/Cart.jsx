@@ -1,23 +1,8 @@
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
-export default function Cart({ cart, setCart }) {
-
-  const updateQuantity = (index, change) => {
-    const updatedCart = [...cart];
-    updatedCart[index].quantity += change;
-
-    if (updatedCart[index].quantity <= 0) {
-      updatedCart.splice(index, 1);
-    }
-
-    setCart(updatedCart);
-  };
-
-  const removeItem = (index) => {
-    const updatedCart = [...cart];
-    updatedCart.splice(index, 1);
-    setCart(updatedCart);
-  };
+export default function Cart() {
+  const { cart, updateQuantity, removeFromCart } = useCart();
 
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -41,9 +26,9 @@ export default function Cart({ cart, setCart }) {
 
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-6">
-            {cart.map((item, index) => (
+            {cart.map((item) => (
               <div
-                key={index}
+                key={item.id}
                 className="flex gap-4 border-b pb-4"
               >
                 {/* Image */}
@@ -65,7 +50,7 @@ export default function Cart({ cart, setCart }) {
                   {/* Quantity */}
                   <div className="flex items-center gap-3 mt-3">
                     <button
-                      onClick={() => updateQuantity(index, -1)}
+                      onClick={() => updateQuantity(item.id, -1)}
                       className="btn btn-xs btn-outline"
                     >
                       <Minus size={14} />
@@ -76,7 +61,7 @@ export default function Cart({ cart, setCart }) {
                     </span>
 
                     <button
-                      onClick={() => updateQuantity(index, 1)}
+                      onClick={() => updateQuantity(item.id, 1)}
                       className="btn btn-xs btn-outline"
                     >
                       <Plus size={14} />
@@ -86,7 +71,7 @@ export default function Cart({ cart, setCart }) {
 
                 {/* Remove */}
                 <button
-                  onClick={() => removeItem(index)}
+                  onClick={() => removeFromCart(item.id)}
                   className="text-gray-400 hover:text-red-600"
                 >
                   <Trash2 size={18} />
