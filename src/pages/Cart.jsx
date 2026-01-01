@@ -1,5 +1,6 @@
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart, updateQuantity, removeFromCart } = useCart();
@@ -102,10 +103,11 @@ export default function Cart() {
               <span>Total</span>
               <span>₹{subtotal}</span>
             </div>
-
+            <Link to="/checkout">
             <button className="btn btn-primary w-full">
               Proceed to Checkout
             </button>
+            </Link>
           </div>
 
         </div>
