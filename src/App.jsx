@@ -7,6 +7,7 @@ import Cart from "./pages/Cart";
 import AboutUs from "./pages/AboutUs";
 import Distributers from "./pages/Distributers";
 import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/distributers" element={<Distributers />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

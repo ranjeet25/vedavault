@@ -1,0 +1,182 @@
+[
+  {
+  "id": 102,
+  "slug": "banarasi-rani-pink-silk-saree",
+
+  "basicInfo": {
+    "name": "Banarasi Silk Saree – Rani Pink",
+    "shortDescription": "Pure Banarasi silk saree with traditional zari weaving",
+    "description": "This authentic Banarasi silk saree is handcrafted with intricate zari work, perfect for weddings, festivals, and grand occasions.",
+    "category": "Sarees",
+    "subCategory": "Banarasi",
+    "brand": "Vedavault",
+    "tags": ["banarasi", "wedding", "silk", "handloom"]
+  },
+
+  "pricing": {
+    "mrp": 12999,
+    "sellingPrice": 8999,
+    "currency": "INR",
+    "taxInclusive": true
+  },
+
+  "offers": {
+    "discountType": "percentage",
+    "discountValue": 30,
+    "offerLabel": "Festive Offer",
+    "validTill": "2025-10-31"
+  },
+
+  "images": {
+    "main": "/assets/products/rani-pink/1.jpg",
+    "gallery": [
+      "/assets/products/rani-pink/1.jpg",
+      "/assets/products/rani-pink/2.jpg",
+      "/assets/products/rani-pink/3.jpg"
+    ],
+    "hover": "/assets/products/rani-pink/hover.jpg"
+  },
+
+  "sareeDetails": {
+    "fabric": "Pure Silk",
+    "weave": "Banarasi",
+    "work": "Zari",
+    "length": "5.5 meters",
+    "blousePiece": true,
+    "blouseFabric": "Silk",
+    "color": "Rani Pink",
+    "occasion": ["Wedding", "Festival"],
+    "care": "Dry Clean Only",
+    "origin": "Varanasi, India"
+  },
+
+  "availability": {
+    "inStock": true,
+    "stockCount": 25,
+    "sku": "VV-BAN-RP-101"
+  },
+
+  "delivery": {
+    "codAvailable": true,
+    "estimatedDeliveryDays": "4-6",
+    "returnPolicyDays": 7
+  },
+
+  "rewards": {
+    "superCoinsEarned": 90,
+    "superCoinsRedeemable": true
+  },
+
+  "distributor": {
+    "commissionPercentage": 12,
+    "referralEligible": true,
+    "referralBonusCoins": 20
+  },
+
+  "ratings": {
+    "average": 4.6,
+    "totalReviews": 128
+  },
+
+  "seo": {
+    "metaTitle": "Banarasi Silk Saree in Rani Pink | Vedavault",
+    "metaDescription": "Buy authentic Banarasi silk saree in Rani Pink with zari work. Free delivery & COD available."
+  },
+
+  "timestamps": {
+    "createdAt": "2025-01-12",
+    "updatedAt": "2025-02-05"
+  }
+},
+
+{
+  "id": 101,
+  "slug": "Leaf Design Saree",
+
+  "basicInfo": {
+    "name": "Leaf Design Saree",
+    "shortDescription": "Pure Banarasi silk saree with Leaf Design",
+    "description": "This authentic Banarasi silk saree is handcrafted with intricate zari work, perfect for weddings, festivals, and grand occasions.",
+    "category": "Sarees",
+    "subCategory": "Banarasi",
+    "brand": "Vedavault",
+    "productCode":"Saree 500 Wine Red",
+    "tags": ["banarasi", "wedding", "silk", "handloom"]
+  },
+
+  "pricing": {
+    "mrp": 1200,
+    "sellingPrice": 500,
+    "currency": "INR",
+    "taxInclusive": true
+  },
+
+  "offers": {
+    "discountType": "percentage",
+    "discountValue": 30,
+    "offerLabel": "Festive Offer",
+    "validTill": "2025-10-31"
+  },
+
+  "images": {
+    "main": "/assets/products/rani-pink/1.jpg",
+    "gallery": [
+      "/assets/products/rani-pink/1.jpg",
+      "/assets/products/rani-pink/2.jpg",
+      "/assets/products/rani-pink/3.jpg"
+    ],
+    "hover": "/assets/products/rani-pink/hover.jpg"
+  },
+
+  "sareeDetails": {
+    "fabric": "Pure Silk",
+    "weave": "Banarasi",
+    "work": "Zari",
+    "length": "5.5 meters",
+    "blousePiece": true,
+    "blouseFabric": "Silk",
+    "color": "Rani Pink",
+    "occasion": ["Wedding", "Festival"],
+    "care": "Dry Clean Only",
+    "origin": "Varanasi, India"
+  },
+
+  "availability": {
+    "inStock": true,
+    "stockCount": 25,
+    "sku": "VV-BAN-RP-101"
+  },
+
+  "delivery": {
+    "codAvailable": true,
+    "estimatedDeliveryDays": "4-6",
+    "returnPolicyDays": 7
+  },
+
+  "rewards": {
+    "superCoinsEarned": 5,
+    "superCoinsRedeemable": true
+  },
+
+  "distributor": {
+    "commissionPercentage": 12,
+    "referralEligible": true,
+    "referralBonusCoins": 20
+  },
+
+  "ratings": {
+    "average": 4.2,
+    "totalReviews": 12
+  },
+
+  "seo": {
+    "metaTitle": "Banarasi Silk Saree in Rani Pink | Vedavault",
+    "metaDescription": "Buy authentic Banarasi silk saree in Rani Pink with zari work. Free delivery & COD available."
+  },
+
+  "timestamps": {
+    "createdAt": "2025-01-12",
+    "updatedAt": "2025-02-05"
+  }
+}
+]

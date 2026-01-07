@@ -7,19 +7,23 @@ import {
   RotateCcw,
   Plus,
   Minus,
+  Star,
+  BadgeCheck,
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import products from "../data/products";
+import products from "../mockAPIs/product.json";
 
 import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
 import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
 import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
 
 export default function ProductDetail() {
-  const { id } = useParams();
+  const  id  = 101;
   const { addToCart } = useCart();
 
-  const product = products.find((p) => p.id === Number(id));
+const product = products.find(
+  (p) => p.id == id
+);
 
   if (!product) {
     return (
@@ -29,9 +33,8 @@ export default function ProductDetail() {
     );
   }
 
-  const images = product.images?.length
-    ? product.images
-    : [RaniPink1, RaniPink2, RaniPink3];
+  /* Keep OLD images */
+  const images = [RaniPink1, RaniPink2, RaniPink3];
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -41,14 +44,19 @@ export default function ProductDetail() {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
     }, 4000);
-
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
+  /* Cart payload → backend ready */
   const handleAddToCart = () => {
     addToCart({
-      ...product,
+      productId: product.id,
+      sku: product.availability.sku,
+      name: product.basicInfo.name,
+      price: product.pricing.sellingPrice,
       quantity,
+      image: images[0],
+      superCoins: product.rewards.superCoinsEarned,
     });
   };
 
@@ -58,8 +66,6 @@ export default function ProductDetail() {
 
         {/* IMAGE GALLERY */}
         <div className="flex flex-col gap-4">
-
-          {/* Main Image */}
           <div
             className="bg-base-200 rounded-lg overflow-hidden
                        flex items-center justify-center
@@ -67,23 +73,21 @@ export default function ProductDetail() {
           >
             <img
               src={images[activeIndex]}
-              alt={product.name}
+              alt={product.basicInfo.name}
               className="w-full h-full object-contain transition-opacity duration-500"
             />
           </div>
 
-          {/* Thumbnails */}
           <div className="flex gap-3 justify-center md:justify-start">
             {images.map((img, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`border rounded-md p-1 transition
-                  ${
-                    activeIndex === index
-                      ? "border-primary"
-                      : "border-gray-300"
-                  }`}
+                className={`border rounded-md p-1 ${
+                  activeIndex === index
+                    ? "border-primary"
+                    : "border-gray-300"
+                }`}
               >
                 <img
                   src={img}
@@ -99,18 +103,41 @@ export default function ProductDetail() {
         <div className="flex flex-col gap-6">
 
           <h1 className="text-3xl md:text-4xl font-semibold">
-            {product.name}
+            {product.basicInfo.name}
           </h1>
 
-          <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-            {product.description}
+          <p className="text-gray-600 text-sm md:text-base">
+            {product.basicInfo.description}
           </p>
 
-          <p className="text-2xl md:text-3xl font-normal text-gray-800">
-            ₹{product.price}
-          </p>
+          {/* Ratings */}
+          <div className="flex items-center gap-2 text-sm">
+            <Star size={16} className="text-amber-500" />
+            <span>{product.ratings.average}</span>
+            <span className="text-gray-500">
+              ({product.ratings.totalReviews} reviews)
+            </span>
+            <BadgeCheck size={16} className="text-green-600 ml-2" />
+          </div>
 
-          {/* Quantity Selector */}
+          {/* Pricing */}
+          <div className="flex items-center gap-3">
+            <span className="text-2xl md:text-3xl font-normal">
+              ₹{product.pricing.sellingPrice}
+            </span>
+            <span className="line-through text-gray-400">
+              ₹{product.pricing.mrp}
+            </span>
+            <span className="text-green-600 text-sm font-medium">
+              {product.offers.discountValue}% OFF
+            </span>
+          </div>
+
+          <span className="text-xs text-amber-600 font-medium">
+            {product.offers.offerLabel}
+          </span>
+
+          {/* Quantity */}
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">Quantity</span>
             <div className="flex items-center gap-3">
@@ -120,11 +147,7 @@ export default function ProductDetail() {
               >
                 <Minus size={14} />
               </button>
-
-              <span className="min-w-[20px] text-center">
-                {quantity}
-              </span>
-
+              <span>{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
                 className="btn btn-xs btn-outline"
@@ -134,23 +157,23 @@ export default function ProductDetail() {
             </div>
           </div>
 
-          {/* Trust Indicators */}
+          {/* Trust */}
           <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
             <div className="flex items-center gap-2">
               <ShieldCheck size={18} />
-              <span>Authentic Weave</span>
+              Authentic Banarasi
             </div>
             <div className="flex items-center gap-2">
               <Truck size={18} />
-              <span>Free Delivery</span>
+              Delivery in {product.delivery.estimatedDeliveryDays} days
             </div>
             <div className="flex items-center gap-2">
               <RotateCcw size={18} />
-              <span>Easy Returns</span>
+              {product.delivery.returnPolicyDays}-day returns
             </div>
             <div className="flex items-center gap-2">
               <ShoppingBag size={18} />
-              <span>Premium Quality</span>
+              Earn {product.rewards.superCoinsEarned} SuperCoins
             </div>
           </div>
 
@@ -164,15 +187,17 @@ export default function ProductDetail() {
               Add to Cart
             </button>
 
-            <button className="btn btn-outline flex-1">
+            <button
+              disabled={!product.delivery.codAvailable}
+              className="btn btn-outline flex-1"
+            >
               Buy Now
             </button>
           </div>
 
           <div className="border-t pt-4 text-sm text-gray-500">
-            Crafted with care • Inspired by Indian heritage
+            Handcrafted in {product.sareeDetails.origin}
           </div>
-
         </div>
       </div>
     </section>

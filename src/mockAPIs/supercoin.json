@@ -1,0 +1,18 @@
+{
+  "userId": "u123",
+  "balance": 320,
+  "history": [
+    {
+      "type": "EARNED",
+      "coins": 90,
+      "reason": "Order #ORD123",
+      "date": "2025-02-10"
+    },
+    {
+      "type": "USED",
+      "coins": 50,
+      "reason": "Checkout",
+      "date": "2025-02-12"
+    }
+  ]
+}
