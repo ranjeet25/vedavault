@@ -1,7 +1,3 @@
-import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
-import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
-import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
-
 
 const products = [
   {

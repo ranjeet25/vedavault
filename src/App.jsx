@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import Distributers from "./pages/Distributers";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/distributers" element={<Distributers />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin></Admin>} />
       </Routes>
     </>
   );
