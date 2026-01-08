@@ -1,5 +1,10 @@
-export * from "./auth.api";
-export * from "./product.api";
-export * from "./cart.api";
-export * from "./order.api";
-export * from "./supercoin.api";
+import axiosInstance from "./axiosInstance";
+
+const api = {
+  get: axiosInstance.get,
+  post: axiosInstance.post,
+  put: axiosInstance.put,
+  delete: axiosInstance.delete,
+};
+
+export default api;

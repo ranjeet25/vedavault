@@ -1,31 +1,48 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api",
+  baseURL:  "http://localhost:5000/api",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-// Request Interceptor (Auth, tokens)
+/**
+ * REQUEST INTERCEPTOR
+ * (JWT ready – currently disabled)
+ */
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+    // 🔒 Enable later when auth is added
+    // const token = localStorage.getItem("token");
+    // if (token) {
+    //   config.headers.Authorization = `Bearer ${token}`;
+    // }
+
     return config;
   },
   (error) => Promise.reject(error)
 );
 
-// Response Interceptor (Errors)
+/**
+ * RESPONSE INTERCEPTOR
+ * Centralized error handling
+ */
 axiosInstance.interceptors.response.use(
-  (response) => response.data,
+  (response) => response.data, // always return data directly
   (error) => {
-    console.error("API Error:", error?.response || error.message);
-    return Promise.reject(error);
+    const message =
+      error?.response?.data?.message ||
+      error?.message ||
+      "Something went wrong";
+
+    console.error("API Error:", message);
+
+    return Promise.reject({
+      status: error?.response?.status,
+      message,
+    });
   }
 );
 

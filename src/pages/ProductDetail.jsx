@@ -9,54 +9,65 @@ import {
   Minus,
   Star,
   BadgeCheck,
+  CircleStar 
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import products from "../mockAPIs/product.json";
-
-import RaniPink1 from "../assets/products/Rani Pink/Rani Pink 1.jpeg";
-import RaniPink2 from "../assets/products/Rani Pink/Rani Pink 2.jpeg";
-import RaniPink3 from "../assets/products/Rani Pink/Rani Pink 3.jpeg";
+import api from "../api"; // axios instance
 
 export default function ProductDetail() {
-  const  id  = 101;
+  const { id } = useParams(); // Mongo _id from URL
   const { addToCart } = useCart();
 
-const product = products.find(
-  (p) => p.id == id
-);
+  const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  if (!product) {
+  /* Fetch product from backend */
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const res = await api.get(`/products/${id}`);
+        setProduct(res.data);
+      } catch (err) {
+        console.error(err);
+        setError("Product not found");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (loading) {
     return (
       <div className="text-center py-20 text-gray-500">
-        Product not found
+        Loading product...
       </div>
     );
   }
 
-  /* Keep OLD images */
-  const images = [RaniPink1, RaniPink2, RaniPink3];
+  if (error || !product) {
+    return (
+      <div className="text-center py-20 text-red-500">
+        {error}
+      </div>
+    );
+  }
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const images = product.images?.gallery?.length
+    ? product.images.gallery
+    : [product.images?.main];
 
-  /* Auto Slider */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  /* Cart payload → backend ready */
   const handleAddToCart = () => {
     addToCart({
-      productId: product.id,
-      sku: product.availability.sku,
+      productId: product._id,
       name: product.basicInfo.name,
       price: product.pricing.sellingPrice,
+      image: product.images.main,
       quantity,
-      image: images[0],
-      superCoins: product.rewards.superCoinsEarned,
     });
   };
 
@@ -100,7 +111,7 @@ const product = products.find(
         </div>
 
         {/* PRODUCT DETAILS */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
 
           <h1 className="text-3xl md:text-4xl font-semibold">
             {product.basicInfo.name}
@@ -110,15 +121,21 @@ const product = products.find(
             {product.basicInfo.description}
           </p>
 
+          <div className="productCode text-xs font-bold text-gray-700">
+            Product Code 
+            <span className="ml-2 py-1 px-2 rounded-md text-amber-600 text-xs font-bold bg-amber-100">
+                {product?.basicInfo?.productCode}</span>
+          </div>
+
           {/* Ratings */}
-          <div className="flex items-center gap-2 text-sm">
+          {/* <div className="flex items-center gap-2 text-sm">
             <Star size={16} className="text-amber-500" />
             <span>{product.ratings.average}</span>
             <span className="text-gray-500">
               ({product.ratings.totalReviews} reviews)
             </span>
             <BadgeCheck size={16} className="text-green-600 ml-2" />
-          </div>
+          </div> */}
 
           {/* Pricing */}
           <div className="flex items-center gap-3">
@@ -129,12 +146,13 @@ const product = products.find(
               ₹{product.pricing.mrp}
             </span>
             <span className="text-green-600 text-sm font-medium">
-              {product.offers.discountValue}% OFF
+              {product.offers.discountValue}% OFF + 
+              <span className="font-bold text-amber-600"> {product?.rewards?.superCoinsEarned} SuperCoin</span> 
             </span>
           </div>
 
-          <span className="text-xs text-amber-600 font-medium">
-            {product.offers.offerLabel}
+          <span className="text-xs ">
+            <span className="text-amber-600 font-medium">{product.offers.offerLabel}</span>
           </span>
 
           {/* Quantity */}
@@ -159,29 +177,30 @@ const product = products.find(
 
           {/* Trust */}
           <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
+            <div className="flex items-center gap-2 ">
+              <CircleStar size={18} className="text-amber-600" />
+              Earn {product.rewards.superCoinsEarned} SuperCoins
+            </div>
             <div className="flex items-center gap-2">
-              <ShieldCheck size={18} />
+              <ShieldCheck size={18} className="text-green-600" />
               Authentic Banarasi
             </div>
             <div className="flex items-center gap-2">
-              <Truck size={18} />
+              <Truck size={18} className="text-purple-600"/>
               Delivery in {product.delivery.estimatedDeliveryDays} days
             </div>
             <div className="flex items-center gap-2">
-              <RotateCcw size={18} />
+              <RotateCcw size={18} className="text-blue-600"/>
               {product.delivery.returnPolicyDays}-day returns
             </div>
-            <div className="flex items-center gap-2">
-              <ShoppingBag size={18} />
-              Earn {product.rewards.superCoinsEarned} SuperCoins
-            </div>
+            
           </div>
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <button
               onClick={handleAddToCart}
-              className="btn btn-primary flex-1 gap-2"
+              className="btn btn-primary flex-1 gap-2 p-2"
             >
               <ShoppingBag size={18} />
               Add to Cart
@@ -189,7 +208,7 @@ const product = products.find(
 
             <button
               disabled={!product.delivery.codAvailable}
-              className="btn btn-outline flex-1"
+              className="btn btn-outline flex-1 p-2"
             >
               Buy Now
             </button>
