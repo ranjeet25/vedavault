@@ -12,7 +12,6 @@ export default function Cart() {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
-
       <h2 className="text-3xl font-semibold mb-8">
         Your Shopping Cart
       </h2>
@@ -29,7 +28,7 @@ export default function Cart() {
           <div className="lg:col-span-2 space-y-6">
             {cart.map((item) => (
               <div
-                key={item.id}
+                key={item.productId}
                 className="flex gap-4 border-b pb-4"
               >
                 {/* Image */}
@@ -51,7 +50,9 @@ export default function Cart() {
                   {/* Quantity */}
                   <div className="flex items-center gap-3 mt-3">
                     <button
-                      onClick={() => updateQuantity(item.id, -1)}
+                      onClick={() =>
+                        updateQuantity(item.productId, -1)
+                      }
                       className="btn btn-xs btn-outline"
                     >
                       <Minus size={14} />
@@ -62,7 +63,9 @@ export default function Cart() {
                     </span>
 
                     <button
-                      onClick={() => updateQuantity(item.id, 1)}
+                      onClick={() =>
+                        updateQuantity(item.productId, 1)
+                      }
                       className="btn btn-xs btn-outline"
                     >
                       <Plus size={14} />
@@ -72,7 +75,9 @@ export default function Cart() {
 
                 {/* Remove */}
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() =>
+                    removeFromCart(item.productId)
+                  }
                   className="text-gray-400 hover:text-red-600"
                 >
                   <Trash2 size={18} />
@@ -103,10 +108,11 @@ export default function Cart() {
               <span>Total</span>
               <span>₹{subtotal}</span>
             </div>
+
             <Link to="/checkout">
-            <button className="btn btn-primary w-full">
-              Proceed to Checkout
-            </button>
+              <button className="btn btn-primary w-full">
+                Proceed to Checkout
+              </button>
             </Link>
           </div>
 

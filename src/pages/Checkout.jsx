@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { ShieldCheck } from "lucide-react";
 import Header from "../components/Reuseable/Header";
+import Footer from "../components/Reuseable/Footer";
 
 export default function Checkout() {
   const { cart, clearCart } = useCart();
+
+  console.log(cart);
 
   const [form, setForm] = useState({
     name: "",
@@ -44,6 +47,7 @@ export default function Checkout() {
   };
 
   return (
+    <div>
     <section className="max-w-6xl mx-auto px-4 pb-4">
         <Header heading="Checkout"></Header>
       
@@ -188,5 +192,7 @@ export default function Checkout() {
         </div>
       </div>
     </section>
+     <Footer></Footer>
+    </div>
   );
 }

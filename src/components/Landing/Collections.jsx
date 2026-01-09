@@ -6,7 +6,7 @@ const sareeCollections = [
     id: 1,
     title: "Banarasi Sarees",
     description:
-      "Rich silk sarees with intricate zari work, perfect for weddings and grand occasions.",
+      "Opulent silk sarees adorned with intricate zari craftsmanship, perfect for weddings and royal celebrations.",
     image:
       "https://stylecaret.com/cdn/shop/files/54459412191_15714eb3e7_b.jpg?v=1745665191",
   },
@@ -14,7 +14,7 @@ const sareeCollections = [
     id: 2,
     title: "Kanjivaram Sarees",
     description:
-      "Traditional South Indian silk sarees known for durability and vibrant colors.",
+      "Timeless South Indian silks known for rich textures, vibrant hues, and heirloom durability.",
     image:
       "https://ilovesarees.com/cdn/shop/files/Magenta-Pink-Premium-Banarasi-Silk-Saree-I-Love-Sarees6.webp?v=1728039574&width=1445",
   },
@@ -22,7 +22,7 @@ const sareeCollections = [
     id: 3,
     title: "Chiffon Sarees",
     description:
-      "Lightweight and elegant sarees, ideal for parties and daily elegance.",
+      "Gracefully lightweight sarees with a fluid drape, ideal for elegant evenings and festive charm.",
     image:
       "https://www.ethnicrang.in/wp-content/uploads/2024/04/358-570x713.jpeg",
   },
@@ -31,79 +31,88 @@ const sareeCollections = [
 function Collections() {
   const [current, setCurrent] = useState(0);
 
-  const prevSlide = () => {
+  const prevSlide = () =>
     setCurrent((prev) =>
       prev === 0 ? sareeCollections.length - 1 : prev - 1
     );
-  };
 
-  const nextSlide = () => {
+  const nextSlide = () =>
     setCurrent((prev) =>
       prev === sareeCollections.length - 1 ? 0 : prev + 1
     );
-  };
 
   const collection = sareeCollections[current];
 
   return (
-    <section className="py-16 bg-base-200">
-      <div className="container mx-auto px-6">
+    <section className="py-20 bg-[#faf7f2]">
+      <div className="max-w-6xl mx-auto px-4">
 
-        {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Saree Collections
-        </h2>
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <p className="text-amber-600 tracking-widest uppercase text-sm mb-2">
+            Timeless Elegance
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Our Saree Collections
+          </h2>
+        </div>
 
-        {/* Card */}
-        <div className="relative bg-base-100 border-2 border-amber-500 p-2 rounded-lg overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+        {/* Main Card */}
+        <div className="relative rounded-2xl overflow-hidden border border-amber-400 bg-white shadow-xl">
+
+          <div className="grid md:grid-cols-2">
 
             {/* Image */}
-            <div className="h-72 md:h-96">
+            <div className="relative h-72 md:h-[420px]">
               <img
                 src={collection.image}
                 alt={collection.title}
-                className="w-full h-full object-cover rounded-sm"
+                className="w-full h-full object-cover transition-all duration-700"
               />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
 
             {/* Content */}
-            <div className="p-8">
-              <h3 className="text-2xl font-bold mb-4">
+            <div className="p-8 md:p-12 flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4">
                 {collection.title}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 leading-relaxed mb-8">
                 {collection.description}
               </p>
-              <button className="btn bg-amber-500">
+
+              <button className="self-start px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-full transition-all duration-300 shadow-md">
                 Explore Collection
               </button>
             </div>
           </div>
 
-          {/* Swipe Buttons */}
+          {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="btn btn-circle absolute left-4 top-1/2 -translate-y-1/2"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-amber-500 hover:text-white p-2 rounded-full shadow transition"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="btn btn-circle absolute right-4 top-1/2 -translate-y-1/2"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-amber-500 hover:text-white p-2 rounded-full shadow transition"
           >
             <ChevronRight />
           </button>
         </div>
 
         {/* Indicators */}
-        <div className="flex justify-center mt-6 gap-2">
+        <div className="flex justify-center gap-3 mt-8">
           {sareeCollections.map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === current ? "bg-amber-500" : "bg-gray-300"
+              className={`h-3 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "w-8 bg-amber-500"
+                  : "w-3 bg-gray-300"
               }`}
             ></span>
           ))}

@@ -1,92 +1,86 @@
 {
- 
-  "slug": "saree-600-green-floral-print",
-
-  "basicInfo": {
-    "name": "Green Floral Print Chiffon Saree – Saree 600",
-    "shortDescription": "Lightweight chiffon saree with elegant green floral prints for everyday and casual wear.",
-    "description": "This green floral print chiffon saree is designed for effortless elegance and comfort. Crafted from soft, breathable chiffon fabric, it drapes beautifully and is ideal for daily wear, office use, casual outings, and small gatherings. The subtle floral patterns add a fresh and graceful charm, making it a versatile addition to your wardrobe.",
-    "category": "Sarees",
-    "subCategory": "Chiffon",
-    "brand": "Vedavault",
-    "productCode": "Saree-600-Green-Floral-Print",
-    "tags": [
-      "chiffon saree",
-      "floral print saree",
-      "daily wear saree",
-      "casual saree",
-      "green saree",
-      "lightweight saree"
-    ]
-  },
-
+  "slug": "saree-500-aqua-blue",
+ "basicInfo": {
+  "name": "Leaf Design Saree - Aqua Blue",
+  "shortDescription": "Elegant aqua blue silk saree with subtle leaf motifs, perfect for daily and occasion wear.",
+  "description": "This aqua blue silk saree features refined leaf-inspired patterns that add a graceful and contemporary touch. Crafted from smooth, lightweight silk fabric, it drapes beautifully and offers all-day comfort. Suitable for daily wear, office use, casual occasions, and small gatherings, this saree blends elegance with ease, making it a versatile addition to your wardrobe.",
+  "category": "Sarees",
+  "subCategory": "Silk",
+  "brand": "Vedavault",
+  "productCode": "Saree-500-Aqua-Blue",
+  "tags": [
+    "silk saree",
+    "leaf design saree",
+    "aqua blue saree",
+    "daily wear saree",
+    "casual saree",
+    "lightweight silk saree"
+  ]
+}
+,
   "pricing": {
-    "mrp": 600,
-    "sellingPrice": 400,
+    "mrp": 500,
+    "sellingPrice": 350,
     "currency": "INR",
     "taxInclusive": true
   },
-
   "offers": {
     "discountType": "percentage",
     "discountValue": 30,
-    "offerLabel": "Holi Offer",
+    "offerLabel": "New Year Offer",
     "validTill": "2026-03-31"
   },
-
   "images": {
-    "main": "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Green%20Floral%20Print%201.jpeg?updatedAt=1767808895795",
+    "main": "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Fancy%20Party%20Wear%20Aqua%20Blue%201.jpeg?updatedAt=1767808896236",
     "gallery": [
-      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Green%20Floral%20Print%201.jpeg?updatedAt=1767808895795",
-      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Green%20Floral%20Print%202.jpeg?updatedAt=1767808895745",
-      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Green%20Floral%20Print%203.jpeg?updatedAt=1767808895865"
+      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Fancy%20Party%20Wear%20Aqua%20Blue%201.jpeg?updatedAt=1767808896236",
+      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Fancy%20Party%20Wear%20Aqua%20Blue%203.jpeg?updatedAt=1767808895773",
+      "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Fancy%20Party%20Wear%20Aqua%20Blue%202.jpeg?updatedAt=1767808895786"
     ],
-    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Green%20Floral%20Print%203.jpeg?updatedAt=1767808895865"},
-
+    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/Saree%20Images/Fancy%20Party%20Wear%20Aqua%20Blue%202.jpeg?updatedAt=1767808895786"
+  },
   "sareeDetails": {
-    "fabric": "Printed saree",
+    "fabric": "Silk saree",
     "weave": "MISC",
     "work": "Zari",
     "length": "5.5 meters",
     "blousePiece": true,
     "blouseFabric": "Cotton",
     "color": "Green Floral Print",
-    "occasion": ["lightweight saree","Wedding", "Festival"],
+    "occasion": [
+      "lightweight saree",
+      "Wedding",
+      "Festival"
+    ],
     "care": "Dry Clean Only",
     "origin": "Mumbai, India"
   },
-
   "availability": {
     "inStock": true,
     "stockCount": 25,
-    "sku": "VV-BAN-RP-101"
+    "sku": "VV-WIS-RP-101"
   },
-
   "delivery": {
     "codAvailable": true,
     "estimatedDeliveryDays": "4-6",
     "returnPolicyDays": 7
   },
-
   "rewards": {
     "superCoinsEarned": 5,
     "superCoinsRedeemable": true
   },
-
   "distributor": {
     "commissionPercentage": 12,
     "referralEligible": true,
     "referralBonusCoins": 20
   },
-
   "ratings": {
-    "average": 4.6,
-    "totalReviews": 128
+    "average": 4.2,
+    "totalReviews": 12
   },
-
-  "seo": {
-    "metaTitle": "Banarasi Silk Saree in Rani Pink | Vedavault",
-    "metaDescription": "Buy authentic Banarasi silk saree in Rani Pink with zari work. Free delivery & COD available."
-  }
+ "seo": {
+  "metaTitle": "Coffee Brown Leaf Design Saree for Daily Wear | Vedavault",
+  "metaDescription": "Shop lightweight coffee brown chiffon saree with elegant leaf prints. Ideal for daily and casual wear. Free delivery & COD available."
+}
 
 }

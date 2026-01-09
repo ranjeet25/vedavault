@@ -5,15 +5,16 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
+  // ADD TO CART
   const addToCart = (product) => {
     setCart((prev) => {
       const existing = prev.find(
-        (item) => item.id === product.id
+        (item) => item.productId === product.productId
       );
 
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id
+          item.productId === product.productId
             ? {
                 ...item,
                 quantity: item.quantity + product.quantity,
@@ -26,27 +27,36 @@ export function CartProvider({ children }) {
     });
   };
 
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  // REMOVE ITEM
+  const removeFromCart = (productId) => {
+    setCart((prev) =>
+      prev.filter((item) => item.productId !== productId)
+    );
   };
 
-  const updateQuantity = (id, change) => {
+  // UPDATE QUANTITY
+  const updateQuantity = (productId, change) => {
     setCart((prev) =>
       prev
         .map((item) =>
-          item.id === id
-            ? { ...item, quantity: item.quantity + change }
+          item.productId === productId
+            ? {
+                ...item,
+                quantity: item.quantity + change,
+              }
             : item
         )
         .filter((item) => item.quantity > 0)
     );
   };
 
+  // CART COUNT
   const cartCount = cart.reduce(
     (total, item) => total + item.quantity,
     0
   );
 
+  // SUBTOTAL
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0

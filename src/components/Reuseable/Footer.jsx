@@ -11,7 +11,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-base-content">
+    <footer className="bg-gray-100 text-base-content mt-8">
       
       {/* Top Section */}
       <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">

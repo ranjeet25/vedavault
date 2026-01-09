@@ -2,7 +2,7 @@
 import Intro from "../components/Landing/Intro";
 import Hero from "../components/Landing/Hero";
 import Collections from "../components/Landing/Collections";
-import Footer from "../components/Landing/Footer";
+import Footer from "../components/Reuseable/Footer";
 import Reviews from "../components/Landing/Reviews";
 import NewArrivals from "../components/Landing/NewArrivals";
 

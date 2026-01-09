@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Reuseable/Header";
 import api from "../api";
+import Footer from "../components/Reuseable/Footer";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -11,7 +12,7 @@ export default function Products() {
       try {
         const res = await api.get("/products");
         //console.log("Products from API:", res);
-        setProducts(res.data);
+        setProducts(res);
         
       } catch (error) {
         console.error("Failed to fetch products", error);
@@ -22,6 +23,7 @@ export default function Products() {
   }, []);
 
   return (
+    <div>
     <div className="p-6">
       <Header heading="Our Products" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -33,6 +35,8 @@ export default function Products() {
           ))
         )}
       </div>
+    </div>
+     <Footer></Footer>
     </div>
   );
 }

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import api from "../api"; // axios instance
+import Footer from "../components/Reuseable/Footer";
 
 export default function ProductDetail() {
   const { id } = useParams(); // Mongo _id from URL
@@ -60,7 +61,6 @@ export default function ProductDetail() {
   const images = product.images?.gallery?.length
     ? product.images.gallery
     : [product.images?.main];
-
   const handleAddToCart = () => {
     addToCart({
       productId: product._id,
@@ -72,6 +72,7 @@ export default function ProductDetail() {
   };
 
   return (
+    <div>
     <section className="max-w-7xl mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
@@ -220,5 +221,7 @@ export default function ProductDetail() {
         </div>
       </div>
     </section>
+     <Footer></Footer>
+    </div>
   );
 }
