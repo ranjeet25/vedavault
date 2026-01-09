@@ -3,19 +3,21 @@ import ProductCard from "../components/ProductCard";
 import Header from "../components/Reuseable/Header";
 import api from "../api";
 import Footer from "../components/Reuseable/Footer";
+import Loader from "../components/Reuseable/Loader"; 
 
 export default function Products() {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const res = await api.get("/products");
-        //console.log("Products from API:", res);
         setProducts(res);
-        
       } catch (error) {
         console.error("Failed to fetch products", error);
+      } finally {
+        setLoading(false); 
       }
     };
 
@@ -24,19 +26,26 @@ export default function Products() {
 
   return (
     <div>
-    <div className="p-6">
-      <Header heading="Our Products" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.length === 0 ? (
-          <p className="text-gray-500">No products found</p>
+      <div className="p-6">
+        <Header heading="Our Products" />
+
+        {/* Loader */}
+        {loading ? (
+          <Loader />
         ) : (
-          products.map((p) => (
-            <ProductCard key={p._id || p.id} product={p} />
-          ))
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {products.length === 0 ? (
+              <p className="text-gray-500 text-center">No products found</p>
+            ) : (
+              products.map((p) => (
+                <ProductCard key={p._id || p.id} product={p} />
+              ))
+            )}
+          </div>
         )}
       </div>
-    </div>
-     <Footer></Footer>
+
+      <Footer />
     </div>
   );
 }
