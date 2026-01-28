@@ -50,6 +50,11 @@ export function CartProvider({ children }) {
     );
   };
 
+  // ✅ CLEAR CART (THIS WAS MISSING)
+  const clearCart = () => {
+    setCart([]);
+  };
+
   // CART COUNT
   const cartCount = cart.reduce(
     (total, item) => total + item.quantity,
@@ -69,6 +74,7 @@ export function CartProvider({ children }) {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart, // ✅ EXPOSED HERE
         cartCount,
         subtotal,
       }}

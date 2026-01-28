@@ -1,26 +1,48 @@
 import api from "./axiosInstance";
 
 export const AuthAPI = {
-  // Register
-  register: ({ username, password, name }) =>
-    api.post("/auth/register", {
-      username,
+  // Customer Registration
+  registerCustomer: ({ mobile, password, name, email, address }) =>
+    api.post("/auth/register/customer", {
+      mobile,
       password,
       name,
+      email,
+      address,
     }),
 
-  // Login
-  login: ({ username, password }) =>
+  // Distributor Registration
+  registerDistributor: ({
+    mobile,
+    password,
+    name,
+    aadhaar,
+    pan,
+    dob,
+    bankDetails,
+    address,
+    referralCode,
+  }) =>
+    api.post("/auth/register/distributor", {
+      mobile,
+      password,
+      name,
+      aadhaar,
+      pan,
+      dob,
+      bankDetails,
+      address,
+      referralCode,
+    }),
+
+  // Login (Customer / Distributor / Admin)
+  login: ({ mobile, password }) =>
     api.post("/auth/login", {
-      username,
+      mobile,
       password,
     }),
 
-  // Logged-in user
+  // ✅ Get logged-in user (requires backend route)
   getProfile: () =>
     api.get("/auth/me"),
-
-  // Logout
-  logout: () =>
-    api.post("/auth/logout"),
 };

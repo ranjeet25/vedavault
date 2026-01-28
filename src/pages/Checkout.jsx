@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { ShieldCheck } from "lucide-react";
+import axios from "axios";
 import Header from "../components/Reuseable/Header";
 import Footer from "../components/Reuseable/Footer";
+import { OrderAPI } from "../api/order.api";
 
 export default function Checkout() {
   const { cart, clearCart } = useCart();
@@ -31,20 +33,61 @@ export default function Checkout() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handlePlaceOrder = () => {
-    if (!form.name || !form.phone || !form.address) {
-      alert("Please fill all required fields");
-      return;
-    }
+  const handlePlaceOrder = async () => {
+  if (!cart.length) {
+    alert("Cart is empty");
+    return;
+  }
 
-    if (form.paymentMode === "UPI" && !form.transactionId) {
-      alert("Please enter UPI Transaction ID");
-      return;
-    }
+  if (form.paymentMode === "UPI" && !form.transactionId) {
+    alert("Please enter UPI Transaction ID");
+    return;
+  }
+
+  try {
+    const payload = {
+      items: cart.map((item) => ({
+        productId: item.productId,
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+        codAvailable: item.codAvailable ?? true,
+      })),
+
+      // ✅ FIXED SAMPLE CUSTOMER DATA (as requested)
+      customer: {
+        name: "Ranjeet Saw",
+        phone: "7400302012",
+        email: "rahul@example.com",
+        address: "testing",
+      },
+
+      payment: {
+        mode: form.paymentMode,
+        transactionId:
+          form.paymentMode === "UPI" ? form.transactionId : null,
+      },
+
+      totalAmount: subtotal,
+    };
+
+    const token = localStorage.getItem("token"); // 🔴 change key if needed
+
+    // API CALL
+    const res = await OrderAPI.placeOrder(payload, token);
 
     alert("Order placed successfully 🎉");
     clearCart();
-  };
+
+    console.log("Order Response:", res);
+  } catch (error) {
+    console.error(error);
+    alert(
+      error?.response?.data?.message || "Failed to place order"
+    );
+  }
+};
+
 
   return (
     <div>

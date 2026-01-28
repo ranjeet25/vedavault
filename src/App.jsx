@@ -9,6 +9,10 @@ import Distributers from "./pages/Distributers";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
+import DistributorRegistration from "./pages/DistributorRegistration";
+import CustomerRegistration from "./pages/CustomerRegistration";
+import OrderStatus from "./components/dashboard/Admin/OrderStatus";
+import CustomerDashboard from "./pages/CustomerDashboard";
 
 export default function App() {
   return (
@@ -23,7 +27,11 @@ export default function App() {
         <Route path="/distributers" element={<Distributers />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/d-register" element={<DistributorRegistration />} />
+        <Route path="/c-register" element={<CustomerRegistration />} />
         <Route path="/admin" element={<Admin></Admin>} />
+        <Route path="/admin/orders/:id" element={<OrderStatus />} />
+        <Route path="/customer" element={<CustomerDashboard />} />
       </Routes>
     </>
   );

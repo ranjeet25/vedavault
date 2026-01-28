@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <Hero></Hero>
       <NewArrivals></NewArrivals>
-      <Collections></Collections>
+      {/* <Collections></Collections> */}
       <Intro></Intro>
       <Reviews></Reviews>
       <Footer></Footer>
