@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
-import { ShieldCheck } from "lucide-react";
-import axios from "axios";
+import { ShieldCheck, Truck, Coins } from "lucide-react";
 import Header from "../components/Reuseable/Header";
 import Footer from "../components/Reuseable/Footer";
 import { OrderAPI } from "../api/order.api";
@@ -9,7 +8,7 @@ import { OrderAPI } from "../api/order.api";
 export default function Checkout() {
   const { cart, clearCart } = useCart();
 
-  console.log(cart);
+  const user = JSON.parse(localStorage.getItem("user")) || {};
 
   const [form, setForm] = useState({
     name: "",
@@ -19,6 +18,16 @@ export default function Checkout() {
     paymentMode: "UPI",
     transactionId: "",
   });
+
+  useEffect(() => {
+    // Prefill from localStorage if available later
+    setForm((prev) => ({
+      ...prev,
+      name: prev.name || "",
+      email: prev.email || "",
+      phone: prev.phone || "",
+    }));
+  }, []);
 
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -33,15 +42,21 @@ export default function Checkout() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handlePlaceOrder = async () => {
-  if (!cart.length) {
-    alert("Cart is empty");
+ const handlePlaceOrder = async () => {
+  // 🔐 Check login
+  if (!user || !user.id) {
+    alert("You need to register or login first to place an order");
     return;
   }
 
+  if (!cart.length) return alert("Cart is empty");
+
+  if (!form.name || !form.phone || !form.address) {
+    return alert("Please fill all required fields");
+  }
+
   if (form.paymentMode === "UPI" && !form.transactionId) {
-    alert("Please enter UPI Transaction ID");
-    return;
+    return alert("Please enter UPI Transaction ID");
   }
 
   try {
@@ -51,15 +66,15 @@ export default function Checkout() {
         name: item.name,
         price: item.price,
         quantity: item.quantity,
-        codAvailable: item.codAvailable ?? true,
+        superCoinsEarned: item.superCoinsEarned || 0,
+        estimatedDeliveryDays: item.estimatedDeliveryDays || "3-5",
       })),
 
-      // ✅ FIXED SAMPLE CUSTOMER DATA (as requested)
       customer: {
-        name: "Ranjeet Saw",
-        phone: "7400302012",
-        email: "rahul@example.com",
-        address: "testing",
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        address: form.address,
       },
 
       payment: {
@@ -71,19 +86,14 @@ export default function Checkout() {
       totalAmount: subtotal,
     };
 
-    const token = localStorage.getItem("token"); // 🔴 change key if needed
-
-    // API CALL
-    const res = await OrderAPI.placeOrder(payload, token);
+    await OrderAPI.placeOrder(payload);
 
     alert("Order placed successfully 🎉");
     clearCart();
-
-    console.log("Order Response:", res);
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.error(err);
     alert(
-      error?.response?.data?.message || "Failed to place order"
+      err?.response?.data?.message || "Failed to place order"
     );
   }
 };
@@ -91,151 +101,167 @@ export default function Checkout() {
 
   return (
     <div>
-    <section className="max-w-6xl mx-auto px-4 pb-4">
-        <Header heading="Checkout"></Header>
-      
+      <section className="max-w-7xl mx-auto px-4 pb-10">
+        <Header heading="Checkout" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-        {/* LEFT: FORM */}
-        <div className="lg:col-span-2 space-y-6">
+          {/* LEFT */}
+          <div className="lg:col-span-2 space-y-6">
 
-          {/* Contact */}
-          <div className="border rounded-lg p-6">
-            <h3 className="font-semibold mb-4">
-              Contact Information
-            </h3>
+            {/* CONTACT */}
+            <div className="card bg-base-100 shadow-sm">
+              <div className="card-body">
+                <h3 className="font-semibold mb-4">
+                 Secondary Contact Information
+                </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                name="name"
-                placeholder="Full Name"
-                className="input input-bordered w-full"
-                onChange={handleChange}
-              />
-              <input
-                name="email"
-                placeholder="Email"
-                className="input input-bordered w-full"
-                onChange={handleChange}
-              />
-              <input
-                name="phone"
-                placeholder="Phone Number"
-                className="input input-bordered w-full md:col-span-2"
-                onChange={handleChange}
-              />
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    name="name"
+                    placeholder="Full Name"
+                    className="input input-bordered"
+                    value={form.name}
+                    onChange={handleChange}
+                  />
+                  <input
+                    name="email"
+                    placeholder="Email"
+                    className="input input-bordered"
+                    value={form.email}
+                    onChange={handleChange}
+                  />
+                  <input
+                    name="phone"
+                    placeholder="Phone Number"
+                    className="input input-bordered md:col-span-2"
+                    value={form.phone}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Address */}
-          <div className="border rounded-lg p-6">
-            <h3 className="font-semibold mb-4">
-              Shipping Address
-            </h3>
-            <textarea
-              name="address"
-              rows="4"
-              placeholder="Full delivery address"
-              className="textarea textarea-bordered w-full"
-              onChange={handleChange}
-            />
-          </div>
-
-          {/* Payment */}
-          <div className="border rounded-lg p-6 space-y-4">
-            <h3 className="font-semibold">
-              Payment Method
-            </h3>
-
-            {/* UPI */}
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="radio"
-                name="paymentMode"
-                value="UPI"
-                checked={form.paymentMode === "UPI"}
-                onChange={handleChange}
-              />
-              UPI Payment
-            </label>
-
-            {form.paymentMode === "UPI" && (
-              <div className="bg-base-200 p-4 rounded-md space-y-2 text-sm">
-                <p>
-                  <strong>UPI ID:</strong>{" "}
-                  vedavault@upi
-                </p>
-                <input
-                  name="transactionId"
-                  placeholder="Enter Transaction ID"
-                  className="input input-bordered w-full"
+            {/* ADDRESS */}
+            <div className="card bg-base-100 shadow-sm">
+              <div className="card-body">
+                <h3 className="font-semibold mb-4">
+                  Shipping Address
+                </h3>
+                <textarea
+                  name="address"
+                  rows="3"
+                  placeholder="Full delivery address"
+                  className="textarea textarea-bordered"
+                  value={form.address}
                   onChange={handleChange}
                 />
               </div>
-            )}
-
-            {/* COD */}
-            {codAvailable ? (
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="paymentMode"
-                  value="COD"
-                  onChange={handleChange}
-                />
-                Cash on Delivery
-              </label>
-            ) : (
-              <p className="text-sm text-gray-500">
-                Cash on Delivery not available for one or more items
-              </p>
-            )}
-          </div>
-        </div>
-
-        {/* RIGHT: SUMMARY */}
-        <div className="border rounded-lg p-6 h-fit bg-base-200">
-          <h3 className="text-lg font-semibold mb-4">
-            Order Summary
-          </h3>
-
-          {cart.map((item, index) => (
-            <div
-              key={index}
-              className="flex justify-between text-sm mb-2"
-            >
-              <span>
-                {item.name} × {item.quantity}
-              </span>
-              <span>
-                ₹{item.price * item.quantity}
-              </span>
             </div>
-          ))}
 
-          <div className="border-t my-4"></div>
+            {/* PAYMENT */}
+            <div className="card bg-base-100 shadow-sm">
+              <div className="card-body space-y-3">
+                <h3 className="font-semibold">
+                  Payment Method
+                </h3>
 
-          <div className="flex justify-between font-semibold mb-6">
-            <span>Total</span>
-            <span>₹{subtotal}</span>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="paymentMode"
+                    value="UPI"
+                    checked={form.paymentMode === "UPI"}
+                    onChange={handleChange}
+                  />
+                  UPI
+                </label>
+
+                {form.paymentMode === "UPI" && (
+                  <input
+                    name="transactionId"
+                    placeholder="UPI Transaction ID"
+                    className="input input-bordered"
+                    onChange={handleChange}
+                  />
+                )}
+
+                {codAvailable && (
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="paymentMode"
+                      value="COD"
+                      onChange={handleChange}
+                    />
+                    Cash on Delivery
+                  </label>
+                )}
+              </div>
+            </div>
           </div>
 
-          <button
-            onClick={handlePlaceOrder}
-            className="btn btn-primary w-full gap-2"
-          >
-            <ShieldCheck size={18} />
-            Confirm Order
-          </button>
+          {/* RIGHT SUMMARY */}
+          <div className="card bg-base-200 shadow-sm sticky top-24 h-fit">
+            <div className="card-body">
+              <h3 className="font-semibold mb-4">
+                Order Summary
+              </h3>
 
-          <p className="text-xs text-gray-500 mt-4 text-center">
-            Your payment details are securely verified
-          </p>
+              {cart.map((item) => (
+                <div
+                  key={item.productId}
+                  className="flex gap-3 mb-4"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-16 h-16 object-cover rounded"
+                  />
+
+                  <div className="flex-1 text-sm">
+                    <p className="font-medium">{item.name}</p>
+                    <p>Qty: {item.quantity}</p>
+
+                    <div className="flex gap-3 text-xs text-gray-500 mt-1">
+                      <span className="flex items-center gap-1">
+                        <Truck size={14} />
+                        {item.estimatedDeliveryDays} days
+                      </span>
+
+                      <span className="flex font-medium items-center gap-1 text-amber-600">
+                        <Coins size={14} />
+                         Earn {item.superCoinsEarned * item.quantity} Super coins
+                      </span>
+                    </div>
+                  </div>
+
+                  <span className="font-semibold">
+                    ₹{item.price * item.quantity}
+                  </span>
+                </div>
+              ))}
+
+              <div className="divider" />
+
+              <div className="flex justify-between font-semibold">
+                <span>Total</span>
+                <span>₹{subtotal}</span>
+              </div>
+
+              <button
+                onClick={handlePlaceOrder}
+                className="btn btn-primary w-full mt-4 gap-2"
+              >
+                <ShieldCheck size={18} />
+                Place Order
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-     <Footer></Footer>
+      </section>
+
+      <Footer />
     </div>
   );
 }

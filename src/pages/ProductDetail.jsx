@@ -67,6 +67,10 @@ export default function ProductDetail() {
       name: product.basicInfo.name,
       price: product.pricing.sellingPrice,
       image: product.images.main,
+      inStock: product.availability.inStock,
+      superCoinsEarned: product.rewards.superCoinsEarned * quantity,
+      codAvailable: product.delivery.codAvailable,
+      estimatedDeliveryDays: product.delivery.estimatedDeliveryDays,
       quantity,
     });
   };

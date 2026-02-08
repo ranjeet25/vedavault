@@ -6,6 +6,7 @@ function OrderStatus() {
   const { id } = useParams();
   const [order, setOrder] = useState(null);
   const [status, setStatus] = useState("");
+  let totalSuperCoins = 0;
 
   useEffect(() => {
     const fetchOrder = async () => {
@@ -43,15 +44,18 @@ function OrderStatus() {
                     <tr>
                       <th>Product</th>
                       <th>Price</th>
+                      <th>SuperCoin</th>
                       <th>Qty</th>
                       <th>Total</th>
                     </tr>
                   </thead>
                   <tbody>
                     {order.items.map((item) => (
+                      totalSuperCoins += item.superCoinsEarned,
                       <tr key={item.productId}>
                         <td>{item.name}</td>
                         <td>₹{item.price}</td>
+                        <td>{item.superCoinsEarned}</td>
                         <td>{item.quantity}</td>
                         <td className="font-semibold">
                           ₹{item.price * item.quantity}
@@ -62,9 +66,12 @@ function OrderStatus() {
                 </table>
               </div>
 
-              <div className="text-right font-bold mt-4">
-                Grand Total: ₹{order.totalAmount}
+              <div className="text-right  mt-4">
+                <p className="font-bold">Grand Total: ₹{order.totalAmount}</p> 
+                <p>Total Supercoins earned on this order: {totalSuperCoins}</p>
               </div>
+              
+            
             </div>
           </div>
 

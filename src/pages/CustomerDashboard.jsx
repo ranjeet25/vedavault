@@ -1,4 +1,5 @@
 import CustomerProfile from "../components/dashboard/Customer/CustomerProfile";
+import RecentOrders from "../components/dashboard/Customer/RecentOrders";
 
 function CustomerDashboard() {
   return (
@@ -21,7 +22,9 @@ function CustomerDashboard() {
             <div className="card bg-base-100 shadow-sm">
               <div className="card-body">
                 <h2 className="font-semibold text-lg">
+                  
                   Recent Orders
+                  <RecentOrders></RecentOrders>
                 </h2>
                 <p className="text-sm text-gray-500">
                   Your recent purchases will appear here

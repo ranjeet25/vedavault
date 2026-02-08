@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
-import { ShoppingBag, CircleUser, Menu } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ShoppingBag, CircleUser, Menu, LogOut } from "lucide-react";
 import logo from "../assets/SVG/vedavaultlogo.svg";
 import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
   const { cartCount } = useCart();
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
     <div className="navbar bg-base-100 shadow-sm px-4 sticky top-0 z-50">
@@ -30,15 +39,14 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* RIGHT : MOBILE MENU + ICONS */}
+      {/* RIGHT */}
       <div className="navbar-end flex items-center gap-1">
 
-        {/* MOBILE MENU (Links only) */}
+        {/* MOBILE MENU */}
         <div className="dropdown dropdown-end lg:hidden">
           <label
             tabIndex={0}
             className="btn btn-ghost btn-circle"
-            aria-label="Open menu"
           >
             <Menu />
           </label>
@@ -51,26 +59,63 @@ export default function Navbar() {
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/distributers">For Distributers</Link></li>
             <li><Link to="/about-us">About Us</Link></li>
+
+            {user ? (
+              <>
+                <li><Link to="/customer">My Account</Link></li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="text-error"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li><Link to="/login">Login</Link></li>
+            )}
           </ul>
         </div>
 
-        {/* LOGIN */}
-        <Link
-          to="/login"
-          className="btn btn-ghost btn-circle"
-          aria-label="User account"
-        >
-          <CircleUser />
-        </Link>
+        {/* USER ICON / LOGOUT */}
+        {user ? (
+          <div className="dropdown dropdown-end hidden lg:block">
+            <label tabIndex={0} className="btn btn-ghost btn-circle">
+              <CircleUser />
+            </label>
+
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40"
+            >
+              <li><Link to="/customer">My Profile</Link></li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="text-error flex gap-2"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link
+            to="/login"
+            className="btn btn-ghost btn-circle"
+          >
+            <CircleUser />
+          </Link>
+        )}
 
         {/* CART */}
         <Link
           to="/cart"
           className="btn btn-ghost btn-circle relative"
-          aria-label="Cart"
         >
           <ShoppingBag />
-
           {cartCount > 0 && (
             <span className="badge badge-sm badge-primary absolute -top-1 -right-1">
               {cartCount}
