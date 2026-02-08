@@ -13,6 +13,7 @@ import DistributorRegistration from "./pages/DistributorRegistration";
 import CustomerRegistration from "./pages/CustomerRegistration";
 import OrderStatus from "./components/dashboard/Admin/OrderStatus";
 import CustomerDashboard from "./pages/CustomerDashboard";
+import AdminLogin from "./pages/AdminLogin";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/d-register" element={<DistributorRegistration />} />
         <Route path="/c-register" element={<CustomerRegistration />} />
         <Route path="/admin" element={<Admin></Admin>} />
+        <Route path="/admin-login" element={<AdminLogin></AdminLogin>} />
         <Route path="/admin/orders/:id" element={<OrderStatus />} />
         <Route path="/customer" element={<CustomerDashboard />} />
       </Routes>

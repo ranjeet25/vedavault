@@ -36,6 +36,7 @@ export default function Navbar() {
           <li><Link to="/products">Products</Link></li>
           <li><Link to="/distributers">For Distributers</Link></li>
           <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/admin-login">Admin</Link></li>
         </ul>
       </div>
 
@@ -59,6 +60,7 @@ export default function Navbar() {
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/distributers">For Distributers</Link></li>
             <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/admin-login">Admin</Link></li>
 
             {user ? (
               <>
