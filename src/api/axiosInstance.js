@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL:  "https://vedavault-api.vercel.app/api",
-  //baseURL:  "http://localhost:5000/api",
+  //baseURL:  "https://vedavault-api.vercel.app/api",
+  baseURL:  "http://localhost:5000/api",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",

@@ -7,15 +7,17 @@ const reviews = [
     role: "Customer",
     verified: true,
     rating: 5,
-    message: "Beautiful Banarasi saree. Fabric quality is excellent.",
+    message:
+      "My hair fall reduced within weeks! The onion hair oil works amazingly and feels completely natural.",
   },
   {
     id: 2,
     name: "Ramesh Kumar",
     role: "Distributor",
-    verified: false,
+    verified: true,
     rating: 5,
-    message: "Reliable partner with consistent quality and timely delivery.",
+    message:
+      "High demand product with great results. Customers are very satisfied with the quality.",
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ const reviews = [
     role: "Customer",
     verified: true,
     rating: 4,
-    message: "Chiffon sarees are lightweight and elegant. Loved it!",
+    message:
+      "The shampoo leaves my hair soft and clean without dryness. Perfect for regular use!",
   },
 ];
 
@@ -38,22 +41,28 @@ function Reviews() {
     setIndex(index === reviews.length - 1 ? 0 : index + 1);
 
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-xl mx-auto text-center">
+    <section className="py-16 bg-base-100">
+      <div className="max-w-2xl mx-auto text-center px-4">
 
-        <h2 className="text-2xl font-bold mb-6">
-          Customer & Distributor Reviews
+        {/* Heading */}
+        <h2 className="text-3xl font-bold mb-2">
+          What Our Customers Say 💬
         </h2>
+        <p className="text-gray-500 mb-8">
+          Real results from real people using our herbal hair care products
+        </p>
 
         {/* Review Card */}
-        <div className="bg-white p-6 shadow rounded border border-gray-200">
+        <div className="card bg-base-200 shadow-xl p-8 transition-all duration-300">
+
+         
 
           {/* Stars */}
           <div className="flex justify-center mb-3">
             {Array.from({ length: 5 }).map((_, i) => (
               <span
                 key={i}
-                className={`text-lg ${
+                className={`text-xl ${
                   i < review.rating ? "text-yellow-500" : "text-gray-300"
                 }`}
               >
@@ -63,29 +72,37 @@ function Reviews() {
           </div>
 
           {/* Message */}
-          <p className="italic text-gray-600 mb-4">
+          <p className="italic text-gray-600 mb-6 text-lg">
             “{review.message}”
           </p>
 
           {/* Name */}
-          <p className="font-semibold">{review.name}</p>
+          <h3 className="font-semibold text-lg">{review.name}</h3>
 
           {/* Role + Verified */}
-          <p className="text-sm text-gray-500 flex justify-center gap-2">
+          <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
             <span>{review.role}</span>
             {review.verified && (
-              <span className="text-green-600 font-medium">✔ Verified</span>
+              <span className="badge badge-success badge-sm">
+                ✔ Verified
+              </span>
             )}
-          </p>
+          </div>
         </div>
 
         {/* Controls */}
-        <div className="flex justify-center gap-4 mt-4">
-          <button onClick={prev} className="btn btn-sm">
-            Prev
+        <div className="flex justify-center gap-4 mt-6">
+          <button
+            onClick={prev}
+            className="btn btn-outline btn-sm rounded-full px-5"
+          >
+            ← Prev
           </button>
-          <button onClick={next} className="btn btn-sm">
-            Next
+          <button
+            onClick={next}
+            className="btn btn-primary btn-sm rounded-full px-5"
+          >
+            Next →
           </button>
         </div>
 
@@ -95,4 +112,3 @@ function Reviews() {
 }
 
 export default Reviews;
-    

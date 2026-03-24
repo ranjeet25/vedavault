@@ -14,6 +14,9 @@ import CustomerRegistration from "./pages/CustomerRegistration";
 import OrderStatus from "./components/dashboard/Admin/OrderStatus";
 import CustomerDashboard from "./pages/CustomerDashboard";
 import AdminLogin from "./pages/AdminLogin";
+import AddNewProducts from "./components/dashboard/Admin/AddNewProducts";
+import StockManagment from "./components/dashboard/Admin/StockManagment";
+import EditProduct from "./components/dashboard/Admin/EditProduct";
 
 export default function App() {
   return (
@@ -34,6 +37,9 @@ export default function App() {
         <Route path="/admin-login" element={<AdminLogin></AdminLogin>} />
         <Route path="/admin/orders/:id" element={<OrderStatus />} />
         <Route path="/customer" element={<CustomerDashboard />} />
+        <Route path="/admin/addProducts" element={<AddNewProducts />} />
+        <Route path="/admin/stockmanagment" element={<StockManagment />} />
+        <Route path="/admin/products/:id/edit" element={<EditProduct />} />
       </Routes>
     </>
   );

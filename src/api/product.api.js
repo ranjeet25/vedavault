@@ -5,6 +5,9 @@ export const ProductAPI = {
 
   getById: (id) => api.get(`/products/${id}`),
 
-  getByCategory: (category) =>
-    api.get(`/products?category=${category}`),
+  getByCategory: (category) => api.get(`/products?category=${category}`),
+  
+  update: (id, payload) => api.patch(`/products/${id}`, payload),
+
+  delete: (id) => api.delete(`/products/${id}`),
 };

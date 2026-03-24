@@ -2,10 +2,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const images = [
-  "https://www.manyavar.com/on/demandware.static/-/Library-Sites-ManyavarSharedLibrary/default/dwe6547122/Ace_Your_Saree_Banner_D.jpg",
-  "https://static.vecteezy.com/system/resources/thumbnails/052/754/819/small/traditional-colorful-indian-dress-sari-photo.jpg",
-  "https://images.unsplash.com/photo-1618901185975-d59f7091bcfe?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FyZWV8ZW58MHx8MHx8fDA%3D",
-  
+  "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-hero-pic-1.png",
+  "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-hero-pic-2.png"
+ 
 ];
 
 function Hero() {
@@ -44,7 +43,7 @@ function Hero() {
         </h1>
 
         <p className=" text-white mb-6 font-semibold animate-fadeUp delay-200">
-          Where Tradition Meets Timeless Elegance
+          Nourish Your Roots. Transform Your Hair.
         </p>
 
         <Link

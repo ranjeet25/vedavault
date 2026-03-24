@@ -159,6 +159,7 @@ export default function ProductDetail() {
           <span className="text-xs ">
             <span className="text-amber-600 font-medium">{product.offers.offerLabel}</span>
           </span>
+          
 
           {/* Quantity */}
           <div className="flex items-center gap-4">
@@ -179,27 +180,11 @@ export default function ProductDetail() {
               </button>
             </div>
           </div>
+          <span className="text-xs ">
+            <span className="text-pink-600 font-bold bg-pink-200 px-2 py-1 rounded-full">Available stock: {product.availability?.stockCount}</span>
+          </span>
 
-          {/* Trust */}
-          <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
-            <div className="flex items-center gap-2 ">
-              <CircleStar size={18} className="text-amber-600" />
-              Earn {product.rewards.superCoinsEarned} SuperCoins
-            </div>
-            <div className="flex items-center gap-2">
-              <ShieldCheck size={18} className="text-green-600" />
-              Authentic Banarasi
-            </div>
-            <div className="flex items-center gap-2">
-              <Truck size={18} className="text-purple-600"/>
-              Delivery in {product.delivery.estimatedDeliveryDays} days
-            </div>
-            <div className="flex items-center gap-2">
-              <RotateCcw size={18} className="text-blue-600"/>
-              {product.delivery.returnPolicyDays}-day returns
-            </div>
-            
-          </div>
+         
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -219,9 +204,57 @@ export default function ProductDetail() {
             </button>
           </div>
 
-          <div className="border-t pt-4 text-sm text-gray-500">
-            Handcrafted in {product.sareeDetails.origin}
-          </div>
+          <div className="border-t pt-4 text-sm text-gray-700">
+
+  {/* BENEFITS */}
+  <div className="collapse collapse-arrow bg-base-200 mb-2">
+    <input type="checkbox" />
+    <div className="collapse-title font-medium">
+      🌿 Benefits
+    </div>
+    <div className="collapse-content">
+      <ul className="list-disc pl-5 space-y-1">
+        {product.productDetails?.benefits?.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {/* INGREDIENTS */}
+  <div className="collapse collapse-arrow bg-base-200 mb-2">
+    <input type="checkbox" />
+    <div className="collapse-title font-medium">
+      🧪 Ingredients
+    </div>
+    <div className="collapse-content">
+      <ul className="space-y-2">
+        {product.productDetails?.ingredients?.map((item, i) => (
+          <li key={i}>
+            <span className="font-semibold">{item.name}:</span>{" "}
+            {item.benefit}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  {/* USAGE */}
+  <div className="collapse collapse-arrow bg-base-200">
+    <input type="checkbox" />
+    <div className="collapse-title font-medium">
+      🛠️ How to Use
+    </div>
+    <div className="collapse-content">
+      <ol className="list-decimal pl-5 space-y-1">
+        {product.productDetails?.usage?.map((step, i) => (
+          <li key={i}>{step}</li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+</div>
         </div>
       </div>
     </section>

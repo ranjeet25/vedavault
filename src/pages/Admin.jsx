@@ -1,6 +1,7 @@
 import AdminViewAllOrders from "../components/dashboard/Admin/AdminViewAllOrders";
 import TodaysOrder from "../components/dashboard/Admin/TodaysOrder";
-import AddNewProducts from "../components/dashboard/Admin/AddNewProducts";
+import { SquarePlus } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 function Admin() {
   return (
@@ -15,13 +16,16 @@ function Admin() {
         </div>
 
         <div className="card bg-base-100 shadow p-4">
-          <h3 className="font-semibold">Add Product</h3>
-          {/* <AddNewProducts /> */}
+          <h3 className="font-semibold">  Add Product</h3>
+          <Link to="/admin/addProducts" className="btn bg-green-400 mt-4"> <SquarePlus /> Add New Product</Link>
         </div>
 
-        <div className="card bg-base-100 shadow p-4">
-          <h3 className="font-semibold">Quick Stats</h3>
-          <p className="text-sm opacity-70">Revenue / Orders (extend later)</p>
+        <div className="card bg-base-100 shadow p-4 flex flex-row gap-4">
+         
+          <Link to="/admin/stockmanagment"> <p className="btn">Stock Managment</p></Link>
+          
+          <p className="btn">Update product</p>
+          
         </div>
       </div>
 

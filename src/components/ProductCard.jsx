@@ -3,17 +3,10 @@ import { Link } from "react-router-dom";
 export default function ProductCard({ product }) {
   if (!product) return null;
 
-  const {
-    basicInfo,
-    pricing,
-    images,
-    slug,
-    availability,
-  } = product;
+  const { basicInfo, pricing, images, slug, availability } = product;
 
   return (
     <div className="card bg-base-100 border border-gray-200 rounded-sm shadow hover:shadow-lg transition">
-
       {/* Image Container */}
       <figure
         className="relative group overflow-hidden bg-base-200
@@ -64,29 +57,20 @@ export default function ProductCard({ product }) {
           )}
 
           <span className=" px-2 text-sm text-gray-700 border-2 border-amber-200  rounded-lg ">
-              ₹{pricing?.mrp - pricing?.sellingPrice} Off + 
-              <span className="font-bold text-amber-600"> {product?.rewards?.superCoinsEarned} SuperCoin</span> 
-              
+            ₹{pricing?.mrp - pricing?.sellingPrice} Off +
+            <span className="font-bold text-amber-600">
+              {" "}
+              {product?.rewards?.superCoinsEarned} SuperCoin
+            </span>
           </span>
-
-
         </div>
 
-
-
-       
-           {/* Offer Badge */}
+        {/* Offer Badge */}
         {product?.offers?.offerLabel && (
           <span className="mt-1 inline-block text-xs text-green-700 font-medium">
             {product.offers.offerLabel}
           </span>
         )}
-
-        
-
-       
-
-      
 
         {/* CTA */}
         <Link
