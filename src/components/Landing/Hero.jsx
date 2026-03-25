@@ -1,28 +1,48 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const images = [
+const desktopImages = [
   "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-hero-pic-1.png",
   "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-hero-pic-2.png"
- 
+];
+
+const mobileImages = [
+  "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-landing-mobile-1.png",
+  "https://ik.imagekit.io/tempvedavault/vedavault/cosmetic/vedavault-landing-mobile-2.png"
 ];
 
 function Hero() {
   const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // run once
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const activeImages = isMobile ? mobileImages : desktopImages;
+
+  // Slider
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => (prev + 1) % activeImages.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activeImages.length]);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
 
       {/* Background Slider */}
-      {images.map((img, index) => (
+      {activeImages.map((img, index) => (
         <div
           key={index}
           className={`absolute inset-0 bg-center bg-cover transition-opacity duration-1000 ${
@@ -32,7 +52,7 @@ function Hero() {
         />
       ))}
 
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
@@ -42,7 +62,7 @@ function Hero() {
           Welcome to Vedavault
         </h1>
 
-        <p className=" text-white mb-6 font-semibold animate-fadeUp delay-200">
+        <p className="text-white mb-6 font-semibold animate-fadeUp delay-200">
           Nourish Your Roots. Transform Your Hair.
         </p>
 
