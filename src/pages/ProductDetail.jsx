@@ -1,22 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  ShoppingBag,
-  ShieldCheck,
-  Truck,
-  RotateCcw,
+
   Plus,
   Minus,
-  Star,
-  BadgeCheck,
-  CircleStar 
+  ArrowUpRight 
+
 } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import api from "../api"; // axios instance
+//import api from "../api"; // axios instance
+import products from "../data/products";
 import Footer from "../components/Reuseable/Footer";
 
 export default function ProductDetail() {
-  const { id } = useParams(); // Mongo _id from URL
+  const { slug } = useParams();
   const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
@@ -25,7 +22,24 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  /* Fetch product from backend */
+  useEffect(() => {
+    const foundProduct = products.find(
+      (item) => item.slug === slug || item._id === slug
+     
+    );
+
+    if (foundProduct) {
+      setProduct(foundProduct);
+      setError("");
+    } else {
+      setProduct(null);
+      setError("Product not found.");
+    }
+
+    setLoading(false);
+  }, [slug]);
+
+  /* Fetch product from backend 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -42,6 +56,8 @@ export default function ProductDetail() {
     fetchProduct();
   }, [id]);
 
+  
+
   if (loading) {
     return (
       <div className="text-center py-20 text-gray-500">
@@ -49,6 +65,7 @@ export default function ProductDetail() {
       </div>
     );
   }
+    */
 
   if (error || !product) {
     return (
@@ -145,15 +162,16 @@ export default function ProductDetail() {
           {/* Pricing */}
           <div className="flex items-center gap-3">
             <span className="text-2xl md:text-3xl font-normal">
-              ₹{product.pricing.sellingPrice}
+              ₹{product.pricing.mrp1}
             </span>
-            <span className="line-through text-gray-400">
-              ₹{product.pricing.mrp}
+            <span className="text-2xl md:text-3xl font-normal">
+            -
             </span>
-            <span className="text-green-600 text-sm font-medium">
-              {product.offers.discountValue}% OFF + 
-              <span className="font-bold text-amber-600"> {product?.rewards?.superCoinsEarned} SuperCoin</span> 
+            <span className="text-2xl md:text-3xl font-normal">
+              ₹{product.pricing.mrp2}
             </span>
+           
+           
           </div>
 
           <span className="text-xs ">
@@ -181,28 +199,16 @@ export default function ProductDetail() {
             </div>
           </div>
           <span className="text-xs ">
-            <span className="text-pink-600 font-bold bg-pink-200 px-2 py-1 rounded-full">Available stock: {product.availability?.stockCount}</span>
+            <span className="text-pink-600 font-bold bg-pink-200 px-2 py-1 rounded-full">Available stock: As per vendor</span>
           </span>
 
-         
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button
-              onClick={handleAddToCart}
-              className="btn btn-primary flex-1 gap-2 p-2"
-            >
-              <ShoppingBag size={18} />
-              Add to Cart
-            </button>
-
-            <button
-              disabled={!product.delivery.codAvailable}
-              className="btn btn-outline flex-1 p-2"
-            >
-              Buy Now
-            </button>
-          </div>
+         <div className="flex gap-4">
+           <a className="btn btn-warning" href={product.purchaseLinks.flipkart}>flipkart <ArrowUpRight /></a>
+           <a className="btn bg-pink-500" href={product.purchaseLinks.shopshy}>shopshy <ArrowUpRight /></a>
+           <a className="btn btn-disabled" href={product.purchaseLinks.amazon}>amazon <ArrowUpRight /></a>
+         </div>
 
           <div className="border-t pt-4 text-sm text-gray-700">
 

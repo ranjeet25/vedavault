@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Reuseable/Header";
-import api from "../api";
 import Footer from "../components/Reuseable/Footer";
 import Loader from "../components/Reuseable/Loader"; 
+import productsData from "../data/products";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    setProducts(productsData);
+    setLoading(false);
+  }, []);
+/*
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -23,6 +28,8 @@ export default function Products() {
 
     fetchProducts();
   }, []);
+
+  */
 
   return (
     <div>

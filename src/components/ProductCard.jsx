@@ -47,22 +47,18 @@ export default function ProductCard({ product }) {
         {/* Price Section */}
         <div className="flex items-center gap-2 mt-1">
           <span className="text-gray-900 font-semibold">
-            ₹{pricing?.sellingPrice}
+            ₹{pricing?.mrp1}
+          </span>
+           <span className="text-gray-900 font-semibold">
+            -
           </span>
 
-          {pricing?.mrp > pricing?.sellingPrice && (
-            <span className="text-sm text-gray-400 line-through">
-              ₹{pricing?.mrp}
+            <span className="text-gray-900 font-semibold ">
+              ₹{pricing?.mrp2}
             </span>
-          )}
+          
 
-          <span className=" px-2 text-sm text-gray-700 border-2 border-amber-200  rounded-lg ">
-            ₹{pricing?.mrp - pricing?.sellingPrice} Off +
-            <span className="font-bold text-amber-600">
-              {" "}
-              {product?.rewards?.superCoinsEarned} SuperCoin
-            </span>
-          </span>
+        
         </div>
 
         {/* Offer Badge */}
@@ -74,7 +70,7 @@ export default function ProductCard({ product }) {
 
         {/* CTA */}
         <Link
-          to={`/products/${product._id}`}
+          to={`/products/${product.slug || product._id}`}
           className="btn btn-outline btn-sm mt-3"
         >
           View Product
