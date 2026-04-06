@@ -21,7 +21,7 @@ function Hero() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // run once
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -39,7 +39,7 @@ function Hero() {
   }, [activeImages.length]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative h-[50vh] md:min-h-screen overflow-hidden">
 
       {/* Background Slider */}
       {activeImages.map((img, index) => (
@@ -56,19 +56,19 @@ function Hero() {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <div className="relative z-10 h-[50vh] md:min-h-screen flex flex-col items-center justify-center text-center px-4">
         
-        <h1 className="font-playfairDisplay text-4xl md:text-7xl text-white font-bold mb-6 animate-fadeUp">
+        <h1 className="font-playfairDisplay text-2xl md:text-7xl text-white font-bold mb-4 md:mb-6 animate-fadeUp">
           Welcome to Vedavault
         </h1>
 
-        <p className="text-white mb-6 font-semibold animate-fadeUp delay-200">
+        <p className="text-white text-sm md:text-base mb-4 md:mb-6 font-semibold animate-fadeUp delay-200">
           Nourish Your Roots. Transform Your Hair.
         </p>
 
         <Link
           to="/products"
-          className="p-6 btn bg-white text-black animate-fadeUp delay-400"
+          className="btn bg-white text-black px-6 py-3 animate-fadeUp delay-400"
         >
           Shop Now
         </Link>

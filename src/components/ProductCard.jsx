@@ -6,17 +6,17 @@ export default function ProductCard({ product }) {
   const { basicInfo, pricing, images, slug, availability } = product;
 
   return (
-    <div className="card bg-base-100 border border-gray-200 rounded-sm shadow hover:shadow-lg transition">
+    <div className="card py-4 bg-base-100 border border-gray-200 rounded-lg shadow hover:shadow-lg transition">
       {/* Image Container */}
       <figure
-        className="relative group overflow-hidden bg-base-200
+        className="relative group overflow-hidden 
                    aspect-[3/4] max-h-[50vh] mx-auto"
       >
         {/* Main Image */}
         <img
           src={images?.main}
           alt={basicInfo?.name}
-          className="w-full h-full object-contain transition-opacity duration-300
+          className="w-full h-full object-cover transition-opacity duration-300
                      group-hover:opacity-0"
         />
 
@@ -25,7 +25,7 @@ export default function ProductCard({ product }) {
           <img
             src={images.hover}
             alt={basicInfo?.name}
-            className="absolute inset-0 w-full h-full object-contain opacity-0
+            className="absolute inset-0 w-full h-full object-cover opacity-0
                        transition-opacity duration-300 group-hover:opacity-100"
           />
         )}

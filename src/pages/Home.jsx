@@ -7,6 +7,7 @@ import Reviews from "../components/Landing/Reviews";
 import NewArrivals from "../components/Landing/NewArrivals";
 import AboutProduct from "../components/Landing/AboutProduct";
 import BuyFromOtherPlatform from "../components/Landing/BuyFromOtherPlatform";
+import UpcommingProducts from "../components/Landing/UpcommingProducts";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero></Hero>
     
       <NewArrivals></NewArrivals>
+      <UpcommingProducts></UpcommingProducts>
       <Intro></Intro>
       <BuyFromOtherPlatform></BuyFromOtherPlatform>
       
