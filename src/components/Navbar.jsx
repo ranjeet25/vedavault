@@ -33,10 +33,12 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal gap-2">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/products">Products</Link></li>
+          <li><Link to="/products">All Products</Link></li>
+          <li><a href="#upcomming">Upcomming Products</a></li>
           <li><Link to="/distributers">For Distributers</Link></li>
-          <li><Link to="/about-us">About Us</Link></li>
-          <li><Link to="/admin-login">Admin</Link></li>
+          
+          {/* <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/admin-login">Admin</Link></li> */}
         </ul>
       </div>
 
@@ -57,10 +59,12 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/products">All Products</Link></li>
+             <li><a href="#upcomming">Upcomming Products</a></li>
             <li><Link to="/distributers">For Distributers</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/admin-login">Admin</Link></li>
+           
+            {/* <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/admin-login">Admin</Link></li> */}
 
             {user ? (
               <>

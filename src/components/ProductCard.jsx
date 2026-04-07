@@ -8,6 +8,13 @@ export default function ProductCard({ product }) {
   return (
     <div className="card py-4 bg-base-100 border border-gray-200 rounded-lg shadow hover:shadow-lg transition">
       {/* Image Container */}
+
+     {/* Badge / Offer */}
+    {product?.offers?.leadSlogan && (
+      <span className="z-10 absolute top-3 left-3 bg-red-400 text-white text-xs px-3 py-1 rounded-full backdrop-blur">
+        {product?.offers?.leadSlogan}
+      </span>
+    )}
       <figure
         className="relative group overflow-hidden 
                    aspect-[3/4] max-h-[50vh] mx-auto"
@@ -43,6 +50,8 @@ export default function ProductCard({ product }) {
         <h3 className="card-title text-base md:text-lg font-medium line-clamp-2">
           {basicInfo?.name}
         </h3>
+
+        <span className="w-54  bg-violet-100 px-4 text-violet-800 text-center rounded-2xl font-bold">Sold {product.stockSoldinLast30Days}+ in last 30 days</span> 
 
         {/* Price Section */}
         <div className="flex items-center gap-2 mt-1">

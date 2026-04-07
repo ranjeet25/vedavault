@@ -135,7 +135,7 @@ export default function ProductDetail() {
         {/* PRODUCT DETAILS */}
         <div className="flex flex-col gap-4">
 
-          <h1 className="text-3xl md:text-4xl font-semibold">
+          <h1 className="text-1xl md:text-2xl font-semibold">
             {product.basicInfo.name}
           </h1>
 
@@ -204,10 +204,10 @@ export default function ProductDetail() {
 
 
           {/* CTA */}
-         <div className="flex gap-4">
-           <a className="btn btn-warning" href={product.purchaseLinks.flipkart}>flipkart <ArrowUpRight /></a>
-           <a className="btn bg-pink-500" href={product.purchaseLinks.shopshy}>shopshy <ArrowUpRight /></a>
-           <a className="btn btn-disabled" href={product.purchaseLinks.amazon}>amazon <ArrowUpRight /></a>
+         <div className="flex flex-col sm:flex-row gap-4">
+           <a className="btn btn-warning" href={product.purchaseLinks.flipkart}>Buy on flipkart <ArrowUpRight /></a>
+           <a className="btn bg-pink-500" href={product.purchaseLinks.shopsy}>Buy on shopshy <ArrowUpRight /></a>
+           <a className="btn btn-disabled" href={product.purchaseLinks.amazon}>Buy on amazon <ArrowUpRight /></a>
          </div>
 
           <div className="border-t pt-4 text-sm text-gray-700">

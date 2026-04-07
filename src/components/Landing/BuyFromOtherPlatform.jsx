@@ -1,6 +1,6 @@
 function BuyFromOtherPlatform() {
   return (
-    <section className="min-h-screen bg-base-100 bg-pink-100 flex items-center justify-center px-6 py-12">
+    <section className="min-h-screen bg-cover bg-[url('https://ik.imagekit.io/tempvedavault/vedavault/LandingPage/vedavault-landing%20pics-5.svg')] flex items-center justify-center px-6 py-12">
       <div className="max-w-6xl w-full text-center">
 
         {/* Heading */}

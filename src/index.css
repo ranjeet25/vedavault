@@ -4,6 +4,10 @@
    themes: light --default;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --font-playfair: "Google Sans", sans-serif;
   --font-playfairDisplay: "Google Sans", sans-serif;

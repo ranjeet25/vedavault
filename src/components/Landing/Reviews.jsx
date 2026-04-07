@@ -3,21 +3,21 @@ import { useState } from "react";
 const reviews = [
   {
     id: 1,
-    name: "Ananya Sharma",
+    name: "Shreya Patil",
     role: "Customer",
     verified: true,
     rating: 5,
     message:
-      "My hair fall reduced within weeks! The onion hair oil works amazingly and feels completely natural.",
+      "Its good I can say after using it for a month",
   },
   {
     id: 2,
-    name: "Ramesh Kumar",
-    role: "Distributor",
+    name: "Soham Bhonde",
+    role: "Customer",
     verified: true,
     rating: 5,
     message:
-      "High demand product with great results. Customers are very satisfied with the quality.",
+      "Purchased via friend's recommendation, Good quality and effective",
   },
   {
     id: 3,
@@ -26,7 +26,17 @@ const reviews = [
     verified: true,
     rating: 4,
     message:
-      "The shampoo leaves my hair soft and clean without dryness. Perfect for regular use!",
+      "Nice Hairoil can be used regularly",
+  },
+
+  {
+    id: 4,
+    name: "Devyani Rao",
+    role: "Customer",
+    verified: true,
+    rating: 4,
+    message:
+      "Good for reguar use. I noticed less dandruff and healthier scalp after using the anti-dandruff shampoo",
   },
 ];
 

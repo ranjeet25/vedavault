@@ -3,7 +3,7 @@ const products = [
   
     {
         "basicInfo": {
-            "name": "Onion Hair Oil for Hair Growth & Hair Fall Control | Natural Herbal Hair Oil for Strong Roots & Thick Hair, Scalp Nourishment | For Men & Women | 200 ml",
+            "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml",
             "shortDescription": "Herbal oil for hair fall control & growth",
             "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and reduce dandruff & flakiness.",
             "category": "Hair Care",
@@ -17,6 +17,8 @@ const products = [
                 "anti hair fall"
             ]
         },
+
+        "stockSoldinLast30Days": 120,
         "pricing": {
             "mrp1": 159,
             "mrp2": 199,
@@ -24,6 +26,7 @@ const products = [
             "taxInclusive": true
         },
         "offers": {
+            "leadSlogan": "Limited Time Offer",
             "discountType": "percentage",
             "discountValue": 30,
             "offerLabel": "30% OFF",
@@ -96,8 +99,7 @@ const products = [
                 "Take 5–15 ml oil depending on hair length",
                 "Apply evenly across the scalp",
                 "Massage gently for 5–10 minutes",
-                "Leave for at least 1 hour",
-                "Wash with shampoo"
+                "Leave on for night or at least one hour before washing with The Veda Vault Anti Dandruff Shampoo",
             ],
             "hairConcerns": [
                 "Hair Fall",
@@ -119,15 +121,13 @@ const products = [
             "origin": "India",
             "storage": "Store in a cool and dry place"
         },
-        "createdAt": "2026-03-22T14:25:00.981Z",
-        "updatedAt": "2026-03-22T14:25:00.981Z",
-        "__v": 0
+      
     },
 
      {
          "slug": "aloevera-amla-reetha-shikakai-herbal-shampoo-300ml",
   "basicInfo": {
-    "name": "The Veda Vault Aloe Vera, Amla, Reetha & Shikakai Herbal Shampoo | Anti Dandruff & Damage Repair | 300 ml",
+    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml",
     "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
     "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots, and promote healthy, shiny hair.",
     "category": "Hair Care",
@@ -141,7 +141,7 @@ const products = [
       "natural shampoo"
     ]
   },
-
+ "stockSoldinLast30Days": 95,
   "pricing": {
     "mrp1": 259,
     "mrp2": 379,
@@ -151,6 +151,7 @@ const products = [
   },
 
   "offers": {
+    "leadSlogan": "Hot Selling Product",
     "discountType": "percentage",
     "discountValue": 25,
     "offerLabel": "25% OFF",
@@ -248,7 +249,7 @@ const products = [
 {
     "slug": "black-seed-oil-plus-aloevera-amla-reetha-shikakai-herbal-shampoo-combo",
   "basicInfo": {
-    "name": "The Veda Vault Hair Care Combo | Black Seed Onion Hair Oil (200 ml) + Aloe Vera Amla Reetha Shikakai Shampoo (300 ml)",
+    "name": "Black Seed Onion Oil 200 ml + Aloe Vera, Amla, Reetha, Shikakai Shampoo 300 ml (2 Items in the set)",
     "shortDescription": "Complete hair care combo for hair fall control, growth & dandruff reduction",
     "description": "A powerful herbal hair care combo that combines the nourishing benefits of Black Seed Onion Hair Oil with the deep cleansing properties of Aloe Vera, Amla, Reetha & Shikakai Shampoo. Helps reduce hair fall, strengthen roots, promote growth, and maintain a healthy scalp.",
     "category": "Hair Care",
@@ -263,7 +264,7 @@ const products = [
       "anti dandruff"
     ]
   },
-
+  "stockSoldinLast30Days": 84,
   "pricing": {
     "mrp1": 479,
     "mrp2": 549,
@@ -273,6 +274,7 @@ const products = [
   },
 
   "offers": {
+    "leadSlogan": "New Launch",
     "discountType": "percentage",
     "discountValue": 35,
     "offerLabel": "Best Combo Deal",
@@ -297,7 +299,7 @@ const products = [
   },
 
   "purchaseLinks": {
-    "flipkart": "",
+    "flipkart": "https://dl.flipkart.com/s/CvBqrZNNNN",
     "shopsy": "https://www.shopsy.in/thevedavault-black-seed-onion-oil-200-ml-aloe-vera-amla-reetha-shikakai-shampoo-300-hair/p/itm9432f00ad70f1?pid=TMJHHNG93ZVTXAQH&lid=LSTTMJHHNG93ZVTXAQHFVS7U0&marketplace=FLIPKART&sattr[]=quantity",
     "amazon": ""
   },
@@ -343,13 +345,12 @@ const products = [
       }
     ],
 
-    "usage": [
-      "Step 1: Apply hair oil to scalp and massage for 5–10 minutes",
-      "Step 2: Leave oil for at least 1 hour (or overnight for best results)",
-      "Step 3: Apply shampoo on wet hair",
-      "Step 4: Gently massage from scalp to ends",
-      "Step 5: Rinse thoroughly and repeat if needed"
-    ],
+    "usage":[
+                "Take 5–15 ml oil depending on hair length",
+                "Apply evenly across the scalp",
+                "Massage gently for 5–10 minutes",
+                "Leave on for night or at least one hour before washing with The Veda Vault Anti Dandruff Shampoo",
+            ],
 
     "hairConcerns": [
       "Hair Fall",
@@ -376,7 +377,8 @@ const products = [
     "origin": "India",
     "storage": "Store in a cool and dry place"
   }
-}
+},
+
 ]
 ;
 

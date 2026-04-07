@@ -10,10 +10,10 @@ function NewArrivals() {
        {/* Heading */}
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-3">
-            Our Best Regular Products        </h1>
-        <p className="text-gray-500">
+            Our Best Selling Products        </h1>
+        <span className=" bg-amber-200 text-amber-700 px-6 py-2 font-bold">
          Explore Below
-        </p>
+        </span>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 p-6">

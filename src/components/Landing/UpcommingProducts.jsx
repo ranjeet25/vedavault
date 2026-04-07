@@ -40,7 +40,7 @@ function UpcommingProducts() {
   }, []);
 
   return (
-    <section className="min-h-screen h-screen bg-cover bg-[url('https://ik.imagekit.io/tempvedavault/vedavault/LandingPage/vedavault-landing%20pics-3.svg')] flex flex-col items-center justify-center px-4">
+    <section id="upcomming" className="min-h-screen h-screen bg-cover bg-[url('https://ik.imagekit.io/tempvedavault/vedavault/LandingPage/vedavault-landing%20pics-3.svg')] flex flex-col items-center justify-center px-4">
 
       {/* Heading */}
       <div className="text-center mb-10">

@@ -33,7 +33,7 @@ export default function Products() {
 
   return (
     <div>
-      <div className="p-6">
+      <div className="max-w-7xl mx-auto px-4 p-6">
         <Header heading="Our Products" />
 
         {/* Loader */}

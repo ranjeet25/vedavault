@@ -20,8 +20,7 @@ function Footer() {
         <div>
           <h2 className="text-2xl font-bold mb-4">Vedavault</h2>
           <p className="text-sm text-gray-600">
-            Vedavault brings you timeless saree collections crafted with
-            tradition, elegance, and quality.
+            Vedavault brings you timeless hair care essentials—crafted with natural ingredients, tradition, and purity for healthy, beautiful hair.
           </p>
 
           {/* Social Icons */}
