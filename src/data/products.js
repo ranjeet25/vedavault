@@ -5,7 +5,7 @@ const products = [
         "basicInfo": {
             "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml",
             "shortDescription": "Herbal oil for hair fall control & growth",
-            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and reduce dandruff & flakiness.",
+            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and  promote healthy, shiny hair.",
             "category": "Hair Care",
             "subCategory": "Hair Oil",
             "brand": "Veda",
@@ -66,7 +66,7 @@ const products = [
                 "Reduces hair fall",
                 "Strengthens roots",
                 "Promotes hair growth",
-                "Reduces dandruff and flakiness"
+                "Improves shine and smoothness"
             ],
             "ingredients": [
                 {
@@ -129,7 +129,7 @@ const products = [
   "basicInfo": {
     "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml",
     "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
-    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots, and promote healthy, shiny hair.",
+    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots.",
     "category": "Hair Care",
     "subCategory": "Shampoo",
     "brand": "Veda Vault",
@@ -191,8 +191,7 @@ const products = [
       "Reduces dandruff and flakiness",
       "Deep cleanses scalp without stripping natural oils",
       "Strengthens hair roots",
-      "Reduces hair damage",
-      "Improves shine and smoothness"
+      "Reduces hair damage"
     ],
 
     "ingredients": [

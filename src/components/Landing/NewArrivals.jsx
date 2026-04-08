@@ -11,7 +11,7 @@ function NewArrivals() {
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-3">
             Our Best Selling Products        </h1>
-        <span className=" bg-amber-200 text-amber-700 px-6 py-2 font-bold">
+        <span className=" bg-green-200 text-green-700 px-6 py-2 font-bold">
          Explore Below
         </span>
       </div>
