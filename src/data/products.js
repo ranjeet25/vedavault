@@ -20,8 +20,8 @@ const products = [
 
         "stockSoldinLast30Days": 120,
         "pricing": {
-            "mrp1": 159,
-            "mrp2": 199,
+            "sellingprice": 300,
+            "mrp": 325,
             "currency": "INR",
             "taxInclusive": true
         },
@@ -143,8 +143,8 @@ const products = [
   },
  "stockSoldinLast30Days": 95,
   "pricing": {
-    "mrp1": 259,
-    "mrp2": 379,
+    "sellingprice": 300,
+    "mrp": 525,
     "maxPrice": 349,
     "currency": "INR",
     "taxInclusive": true
@@ -265,8 +265,8 @@ const products = [
   },
   "stockSoldinLast30Days": 84,
   "pricing": {
-    "mrp1": 479,
-    "mrp2": 549,
+    "sellingprice": 300,
+    "mrp": 525,
     "maxPrice": 599,
     "currency": "INR",
     "taxInclusive": true
@@ -377,6 +377,316 @@ const products = [
     "storage": "Store in a cool and dry place"
   }
 },
+{
+  "basicInfo": {
+    "name": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash 100 ml",
+    "shortDescription": "Neem Aloevera Face Wash with Tea Tree & Niacinamide | Deep Cleansing Face Wash for Acne, Oil Control & Hydration | Suitable for Men & Women",
+    "description": "Experience the power of nature with NEEM ALOEVERA FACE WASH, a refreshing blend of Neem Extract, Aloe Vera, Tea Tree, and Niacinamide. This advanced cleansing formula deeply cleanses the skin, removes excess oil, dirt, and impurities, and helps prevent acne breakouts.",
+    "category": "Skin Care",
+    "subCategory": "Face Wash",
+    "brand": "The Veda Vault",
+    "productCode": "NeemAloeveraFaceWash01",
+    "tags": [
+      "face wash",
+      "neem face wash",
+      "aloe vera face wash",
+      "acne face wash",
+      "oil control",
+      "deep cleansing",
+      "niacinamide face wash",
+      "tea tree face wash"
+    ]
+  },
+
+  "stockSoldinLast30Days": 0,
+
+  "pricing": {
+    "sellingprice": 200,
+    "mrp": 249,
+    "currency": "INR",
+    "taxInclusive": true
+  },
+
+  "offers": {
+    "leadSlogan": "New Launch",
+    "discountType": "percentage",
+    "discountValue": 20,
+    "offerLabel": "20% OFF",
+    "validTill": "2026-12-31T23:59:59.000Z"
+  },
+
+  "images": {
+    "main": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/1ALOEVERA.png?updatedAt=1786553130923",
+    "gallery": ["https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415",
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/4ALOEVERA.png?updatedAt=1786553130880",
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081"
+    ],
+    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415"
+  },
+
+  "availability": {
+    "inStock": true,
+    "stockCount": 0,
+    "sku": "NeemAloeveraFaceWash01"
+  },
+
+  "purchaseLinks": {
+    "flipkart": "",
+    "shopshy": "",
+    "amazon": ""
+  },
+
+  "_id": "",
+  "slug": "neem-aloevera-natural-purifying-face-wash-100ml",
+
+  "productDetails": {
+    "type": "Face Wash",
+    "volume": "100 ml",
+    "suitableFor": [
+      "All Skin Types",
+      "Men",
+      "Women"
+    ],
+    "benefits": [
+      "Purifies the skin and fights acne-causing bacteria",
+      "Hydrates the skin while deeply cleansing",
+      "Provides a refreshing and cooling sensation",
+      "Regulates oil production",
+      "Minimizes the appearance of pores",
+      "Helps fade acne"
+    ],
+    "ingredients": [
+      {
+        "name": "Neem Extract",
+        "benefit": "Purifies the skin and fights acne-causing bacteria",
+        "_id": ""
+      },
+      {
+        "name": "Aloe Vera Extract",
+        "benefit": "Hydrates the skin and supports deep cleansing",
+        "_id": ""
+      },
+      {
+        "name": "Tea Tree",
+        "benefit": "Provides a refreshing and cooling sensation",
+        "_id": ""
+      },
+      {
+        "name": "Niacinamide",
+        "benefit": "Regulates oil production, minimizes pores, and helps fade acne",
+        "_id": ""
+      }
+    ],
+    "usage": [
+      "Wet your face with water",
+      "Take a small amount of face wash and gently massage it onto your face",
+      "Rinse thoroughly with water",
+      "Pat dry and use twice daily for best results"
+    ],
+    "skinConcerns": [
+      "Acne",
+      "Excess Oil",
+      "Impurities",
+      "Uneven Skin"
+    ],
+    "skinType": [
+      "All"
+    ],
+    "freeFrom": [
+      "Paraben-Free",
+      "Sulphate-Free"
+    ],
+    "comboProducts": [
+      "Neem Aloevera Face Wash Pack of 3",
+      "Neem Aloevera Face Wash Pack of 4",
+      "Neem Aloevera Face Wash Pack of 5"
+    ],
+    "shelfLife": "36 months",
+    "origin": "India",
+    "storage": "Store in a cool and dry place"
+  },
+
+  "packOptions": [
+    {
+      "quantity": 1,
+      "unitPrice": 200,
+      "totalPrice": 200,
+      "productName": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash (100 ml)"
+    },
+    {
+      "quantity": 3,
+      "unitPrice": 180,
+      "totalPrice": 540,
+      "productName": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash (100 ml) Pack of 3"
+    },
+    {
+      "quantity": 4,
+      "unitPrice": 170,
+      "totalPrice": 680,
+      "productName": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash (100 ml) Pack of 4"
+    },
+    {
+      "quantity": 5,
+      "unitPrice": 150,
+      "totalPrice": 750,
+      "productName": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash (100 ml) Pack of 5"
+    }
+  ]
+},
+
+{
+  "basicInfo": {
+    "name": "Radiance Glow for Skin Brightening & Tan Removal Face Wash 100 ml",
+    "shortDescription": "RADIANCE GLOW FACE WASH with Orange Vitamin C, Lemon & Niacinamide | Skin Brightening & Tan Removal Face Wash | Deep Cleansing Daily Face Wash for Men & Women",
+    "description": "Rich in Vitamin C and antioxidants, this face wash helps gently exfoliate the skin and promote a healthy-looking glow. Lemon helps clarify the skin, balance excess sebum, and provide a refreshing cleansing experience. Niacinamide works to visibly improve uneven skin tone, reduce the appearance of dark spots, and strengthen the skin's protective barrier.",
+    "category": "Skin Care",
+    "subCategory": "Face Wash",
+    "brand": "The Veda Vault",
+    "productCode": "RadianceGlowFaceWash01",
+    "tags": [
+      "face wash",
+      "radiance glow",
+      "skin brightening",
+      "tan removal",
+      "vitamin c face wash",
+      "lemon face wash",
+      "niacinamide face wash",
+      "deep cleansing",
+      "dark spots"
+    ]
+  },
+
+  "stockSoldinLast30Days": 0,
+
+  "pricing": {
+   "sellingprice": 200,
+    "mrp": 249,
+    "currency": "INR",
+    "taxInclusive": true
+  },
+
+  "offers": {
+    "leadSlogan": "New Launch",
+    "discountType": "percentage",
+    "discountValue": 20,
+    "offerLabel": "20% OFF",
+    "validTill": "2026-12-31T23:59:59.000Z"
+  },
+
+  "images": {
+    "main": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/8RADINACE.png?updatedAt=1786553172991",
+    "gallery": ["https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786",
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798"
+    ],
+    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786"
+  },
+
+  "availability": {
+    "inStock": true,
+    "stockCount": 0,
+    "sku": "RadianceGlowFaceWash01"
+  },
+
+  "purchaseLinks": {
+    "flipkart": "",
+    "shopshy": "",
+    "amazon": ""
+  },
+
+  "_id": "",
+  "slug": "radiance-glow-skin-brightening-tan-removal-face-wash-100ml",
+
+  "productDetails": {
+    "type": "Face Wash",
+    "volume": "100 ml",
+    "suitableFor": [
+      "All Skin Types",
+      "Men",
+      "Women"
+    ],
+    "benefits": [
+      "Rich in Vitamin C and antioxidants",
+      "Provides skin brightening and helps with tan removal",
+      "Helps gently exfoliate the skin",
+      "Helps clarify the skin and regulate oil production",
+      "Evens skin tone and reduces the appearance of dark spots",
+      "Strengthens the skin's protective barrier"
+    ],
+    "ingredients": [
+      {
+        "name": "Orange Extract",
+        "benefit": "Rich in Vitamin C, provides gentle exfoliation and a natural antioxidant boost",
+        "_id": ""
+      },
+      {
+        "name": "Lemon Extract",
+        "benefit": "Helps clarify the skin, balances sebum, and provides a refreshing cleansing experience",
+        "_id": ""
+      },
+      {
+        "name": "Niacinamide",
+        "benefit": "Evens skin tone, reduces the appearance of dark spots, and strengthens the skin barrier",
+        "_id": ""
+      }
+    ],
+    "usage": [
+      "Wet your face with water",
+      "Take a small amount of face wash and gently massage it onto your face",
+      "Rinse thoroughly with water",
+      "Pat dry and use twice daily for best results"
+    ],
+    "skinConcerns": [
+      "Dull Skin",
+      "Tan",
+      "Uneven Skin Tone",
+      "Dark Spots",
+      "Excess Oil"
+    ],
+    "skinType": [
+      "All"
+    ],
+    "freeFrom": [
+      "Paraben-Free",
+      "Sulphate-Free"
+    ],
+    "comboProducts": [
+      "Radiance Glow Face Wash Pack of 3",
+      "Radiance Glow Face Wash Pack of 4",
+      "Radiance Glow Face Wash Pack of 5"
+    ],
+    "shelfLife": "36 months",
+    "origin": "India",
+    "storage": "Store in a cool and dry place"
+  },
+
+  "packOptions": [
+    {
+      "quantity": 1,
+      "unitPrice": 200,
+      "totalPrice": 200,
+      "productName": "Radiance Glow for Skin Brightening & Tan Removal Face Wash (100 ml)"
+    },
+    {
+      "quantity": 3,
+      "unitPrice": 180,
+      "totalPrice": 540,
+      "productName": "Radiance Glow for Skin Brightening & Tan Removal Face Wash (100 ml) Pack of 3"
+    },
+    {
+      "quantity": 4,
+      "unitPrice": 170,
+      "totalPrice": 680,
+      "productName": "Radiance Glow for Skin Brightening & Tan Removal Face Wash (100 ml) Pack of 4"
+    },
+    {
+      "quantity": 5,
+      "unitPrice": 150,
+      "totalPrice": 750,
+      "productName": "Radiance Glow for Skin Brightening & Tan Removal Face Wash (100 ml) Pack of 5"
+    }
+  ]
+}
 
 ]
 ;

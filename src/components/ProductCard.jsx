@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="card py-4 bg-base-100 border border-gray-200 rounded-lg shadow hover:shadow-lg transition">
       {/* Image Container */}
-
+    
      {/* Badge / Offer */}
     {product?.offers?.leadSlogan && (
       <span className="z-10 absolute top-3 left-3 bg-red-400 text-white text-xs px-3 py-1 rounded-full backdrop-blur">
@@ -56,14 +56,12 @@ export default function ProductCard({ product }) {
         {/* Price Section */}
         <div className="flex items-center gap-2 mt-1">
           <span className="text-gray-900 font-semibold">
-            ₹{pricing?.mrp1}
+            ₹{pricing?.sellingprice}
           </span>
-           <span className="text-gray-900 font-semibold">
-            -
-          </span>
+       
 
-            <span className="text-gray-900 font-semibold ">
-              ₹{pricing?.mrp2}
+            <span className=" font-bold line-through text-red-500">
+              ₹{pricing?.mrp}
             </span>
           
 

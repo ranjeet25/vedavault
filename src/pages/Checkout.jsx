@@ -10,6 +10,8 @@ export default function Checkout() {
 
   const user = JSON.parse(localStorage.getItem("user")) || {};
 
+  const formatOrderId = () => `VEDA${Math.floor(100000 + Math.random() * 900000)}`;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -18,16 +20,20 @@ export default function Checkout() {
     paymentMode: "UPI",
     transactionId: "",
   });
+  const [errors, setErrors] = useState({});
+  const [placedOrderId, setPlacedOrderId] = useState("");
 
   useEffect(() => {
-    // Prefill from localStorage if available later
+    const savedForm = JSON.parse(localStorage.getItem("checkoutForm")) || {};
     setForm((prev) => ({
       ...prev,
-      name: prev.name || "",
-      email: prev.email || "",
-      phone: prev.phone || "",
+      ...savedForm,
     }));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("checkoutForm", JSON.stringify(form));
+  }, [form]);
 
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -39,34 +45,54 @@ export default function Checkout() {
   );
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
- const handlePlaceOrder = async () => {
-  // 🔐 Check login
-  if (!user || !user.id) {
-    alert("You need to register or login first to place an order");
-    return;
-  }
+  const validateForm = () => {
+    const newErrors = {};
 
-  if (!cart.length) return alert("Cart is empty");
+    if (!form.name.trim()) newErrors.name = "Full name is required";
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(form.phone)) {
+      newErrors.phone = "Enter a valid 10-digit phone number";
+    }
+    if (!form.address.trim()) newErrors.address = "Delivery address is required";
 
-  if (!form.name || !form.phone || !form.address) {
-    return alert("Please fill all required fields");
-  }
+    if (form.paymentMode === "UPI") {
+      if (!form.transactionId.trim()) {
+        newErrors.transactionId = "UPI transaction ID is required";
+      }
+    }
 
-  if (form.paymentMode === "UPI" && !form.transactionId) {
-    return alert("Please enter UPI Transaction ID");
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
-  try {
+  const handlePlaceOrder = async () => {
+    if (!cart.length) {
+      return alert("Cart is empty");
+    }
+
+    if (!validateForm()) {
+      return;
+    }
+
+    const orderId = formatOrderId();
     const payload = {
+      orderId,
       items: cart.map((item) => ({
         productId: item.productId,
         name: item.name,
         price: item.price,
         quantity: item.quantity,
-        superCoinsEarned: item.superCoinsEarned || 0,
         estimatedDeliveryDays: item.estimatedDeliveryDays || "3-5",
       })),
 
@@ -86,17 +112,56 @@ export default function Checkout() {
       totalAmount: subtotal,
     };
 
-    await OrderAPI.placeOrder(payload);
+    try {
+      //await OrderAPI.placeOrder(payload);
 
-    alert("Order placed successfully 🎉");
-    clearCart();
-  } catch (err) {
-    console.error(err);
-    alert(
-      err?.response?.data?.message || "Failed to place order"
-    );
-  }
-};
+      const formBoldPayload = new FormData();
+      formBoldPayload.append("orderId", orderId);
+      formBoldPayload.append("email", form.email);
+      formBoldPayload.append("phone", form.phone);
+      formBoldPayload.append("address", form.address);
+      formBoldPayload.append("paymentMode", form.paymentMode);
+      formBoldPayload.append(
+        "transactionId",
+        form.paymentMode === "UPI" ? form.transactionId : "N/A"
+      );
+      formBoldPayload.append("totalAmount", subtotal);
+
+      formBoldPayload.append(
+        "products",
+        JSON.stringify(
+          cart.map((item) => ({
+            productId: item.productId,
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price,
+          }))
+        )
+      );
+
+      await fetch("https://formbold.com/s/oeYVR", {
+        method: "POST",
+        body: formBoldPayload,
+      });
+
+      setPlacedOrderId(orderId);
+      setForm((prev) => ({
+        ...prev,
+        transactionId: "",
+      }));
+      localStorage.setItem(
+        "checkoutForm",
+        JSON.stringify({ ...form, transactionId: "" })
+      );
+      alert(`Order placed successfully 🎉\nYour order ID is ${orderId}. Please keep this for future reference.`);
+      clearCart();
+    } catch (err) {
+      console.error(err);
+      alert(
+        err?.response?.data?.message || "Failed to place order"
+      );
+    }
+  };
 
 
   return (
@@ -117,27 +182,44 @@ export default function Checkout() {
                 </h3>
 
                 <div className="grid md:grid-cols-2 gap-4">
-                  <input
-                    name="name"
-                    placeholder="Full Name"
-                    className="input input-bordered"
-                    value={form.name}
-                    onChange={handleChange}
-                  />
-                  <input
-                    name="email"
-                    placeholder="Email"
-                    className="input input-bordered"
-                    value={form.email}
-                    onChange={handleChange}
-                  />
-                  <input
-                    name="phone"
-                    placeholder="Phone Number"
-                    className="input input-bordered md:col-span-2"
-                    value={form.phone}
-                    onChange={handleChange}
-                  />
+                  <div className="space-y-1">
+                    <input
+                      name="name"
+                      placeholder="Full Name"
+                      className="input input-bordered"
+                      value={form.name}
+                      onChange={handleChange}
+                    />
+                    {errors.name && (
+                      <p className="text-sm text-red-600">{errors.name}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-1">
+                    <input
+                      name="email"
+                      placeholder="Email"
+                      className="input input-bordered"
+                      value={form.email}
+                      onChange={handleChange}
+                    />
+                    {errors.email && (
+                      <p className="text-sm text-red-600">{errors.email}</p>
+                    )}
+                  </div>
+
+                  <div className="md:col-span-2 space-y-1">
+                    <input
+                      name="phone"
+                      placeholder="Phone Number"
+                      className="input input-bordered w-full"
+                      value={form.phone}
+                      onChange={handleChange}
+                    />
+                    {errors.phone && (
+                      <p className="text-sm text-red-600">{errors.phone}</p>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -156,6 +238,9 @@ export default function Checkout() {
                   value={form.address}
                   onChange={handleChange}
                 />
+                {errors.address && (
+                  <p className="text-sm text-red-600">{errors.address}</p>
+                )}
               </div>
             </div>
 
@@ -178,12 +263,20 @@ export default function Checkout() {
                 </label>
 
                 {form.paymentMode === "UPI" && (
-                  <input
-                    name="transactionId"
-                    placeholder="UPI Transaction ID"
-                    className="input input-bordered"
-                    onChange={handleChange}
-                  />
+                  <div className="space-y-2">
+                    <input
+                      name="transactionId"
+                      placeholder="UPI Transaction ID"
+                      className="input input-bordered"
+                      value={form.transactionId}
+                      onChange={handleChange}
+                    />
+                    {errors.transactionId && (
+                      <p className="text-sm text-red-600">
+                        {errors.transactionId}
+                      </p>
+                    )}
+                  </div>
                 )}
 
                 {codAvailable && (
@@ -192,11 +285,20 @@ export default function Checkout() {
                       type="radio"
                       name="paymentMode"
                       value="COD"
+                      checked={form.paymentMode === "COD"}
                       onChange={handleChange}
                     />
                     Cash on Delivery
                   </label>
                 )}
+
+                <div className="rounded-lg border border-base-300 bg-base-100 p-4 mt-3 text-sm">
+                  <p className="font-semibold mb-2">Payment Details</p>
+                  <p>THE VEDA VAULT</p>
+                  <p>Account Number - 143502000001379</p>
+                  <p>IFSC CODE : IOBA0001435</p>
+                  <p>Branch - KANDIVLI (EAST); MUMBAI</p>
+                </div>
               </div>
             </div>
           </div>
@@ -207,6 +309,18 @@ export default function Checkout() {
               <h3 className="font-semibold mb-4">
                 Order Summary
               </h3>
+
+              {placedOrderId && (
+                <div className="rounded-2xl border border-primary bg-primary/10 p-5 mb-5">
+                  <p className="text-xs uppercase tracking-[0.24em] text-primary font-semibold">
+                    Order Reference
+                  </p>
+                  <p className="text-2xl font-bold mt-3">{placedOrderId}</p>
+                  <p className="text-sm text-gray-600 mt-2">
+                    Keep this ID safe as a future reference. You can track your order using this ID.
+                  </p>
+                </div>
+              )}
 
               {cart.map((item) => (
                 <div
@@ -229,10 +343,7 @@ export default function Checkout() {
                         {item.estimatedDeliveryDays} days
                       </span>
 
-                      <span className="flex font-medium items-center gap-1 text-amber-600">
-                        <Coins size={14} />
-                         Earn {item.superCoinsEarned * item.quantity} Super coins
-                      </span>
+                     
                     </div>
                   </div>
 

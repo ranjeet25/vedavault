@@ -1,5 +1,5 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect, Link } from "react";
 import {
 
   Plus,
@@ -11,9 +11,11 @@ import { useCart } from "../context/CartContext";
 //import api from "../api"; // axios instance
 import products from "../data/products";
 import Footer from "../components/Reuseable/Footer";
+import cart from "../pages/Cart";
 
 export default function ProductDetail() {
   const { slug } = useParams();
+  const navigate = useNavigate();
   const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
@@ -78,18 +80,23 @@ export default function ProductDetail() {
   const images = product.images?.gallery?.length
     ? product.images.gallery
     : [product.images?.main];
+
+  const buildCartItem = () => ({
+    productId: product._id,
+    name: product.basicInfo.name,
+    price: product.pricing.sellingprice,
+    image: product.images.main,
+    inStock: product.availability.inStock,
+    quantity,
+  });
+
   const handleAddToCart = () => {
-    addToCart({
-      productId: product._id,
-      name: product.basicInfo.name,
-      price: product.pricing.sellingPrice,
-      image: product.images.main,
-      inStock: product.availability.inStock,
-      superCoinsEarned: product.rewards.superCoinsEarned * quantity,
-      codAvailable: product.delivery.codAvailable,
-      estimatedDeliveryDays: product.delivery.estimatedDeliveryDays,
-      quantity,
-    });
+    addToCart(buildCartItem());
+  };
+
+  const handleBuyNow = () => {
+    addToCart(buildCartItem());
+    navigate("/cart");
   };
 
   return (
@@ -162,13 +169,11 @@ export default function ProductDetail() {
           {/* Pricing */}
           <div className="flex items-center gap-3">
             <span className="text-2xl md:text-3xl font-normal">
-              ₹{product.pricing.mrp1}
+              ₹{product.pricing.sellingprice}
             </span>
-            <span className="text-2xl md:text-3xl font-normal">
-            -
-            </span>
-            <span className="text-2xl md:text-3xl font-normal">
-              ₹{product.pricing.mrp2}
+            
+            <span className="text-xl md:text-xl font-bold line-through text-red-500">
+              ₹{product.pricing.mrp}
             </span>
            
            
@@ -205,9 +210,15 @@ export default function ProductDetail() {
 
           {/* CTA */}
          <div className="flex flex-col sm:flex-row gap-4">
-           <a className="btn btn-warning" href={product.purchaseLinks.flipkart}>Buy on flipkart <ArrowUpRight /></a>
+           <button className="btn btn-primary" onClick={handleBuyNow}>
+             Buy Now
+           </button>
+           <button className="btn btn-outline" onClick={handleAddToCart}>
+             Add to Cart
+           </button>
+           {/* <a className="btn btn-warning" href={product.purchaseLinks.flipkart}>Buy on flipkart <ArrowUpRight /></a>
            <a className="btn bg-pink-500" href={product.purchaseLinks.shopsy}>Buy on shopshy <ArrowUpRight /></a>
-           <a className="btn btn-disabled" href={product.purchaseLinks.amazon}>Buy on amazon <ArrowUpRight /></a>
+           <a className="btn btn-disabled" href={product.purchaseLinks.amazon}>Buy on amazon <ArrowUpRight /></a> */}
          </div>
 
           <div className="border-t pt-4 text-sm text-gray-700">

@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard";
 import productsData from "../../data/products";
 
 function NewArrivals() {
-  const newArrivals = productsData.slice(0, 4);
+  const newArrivals = productsData.slice(2, 5);
 
   return (
     <section className="py-12 md:py-20 bg-gray-50 from-base-100 via-base-50 to-base-100">

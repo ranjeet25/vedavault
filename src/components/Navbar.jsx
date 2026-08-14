@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="navbar-start">
         <Link to="/" className="flex items-center">
           <img
-            src="https://ik.imagekit.io/tempvedavault/vedavault/logo/image.png"
+            src="https://ik.imagekit.io/tempvedavault/vedavault/logo/vedavault-logo-2.png"
             alt="Vedavault"
             className="h-14 w-auto"
           />
