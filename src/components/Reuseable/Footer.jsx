@@ -18,9 +18,12 @@ function Footer() {
 
         {/* Brand */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Vedavault</h2>
+          <h2 className="text-2xl font-bold mb-4">The Vedavault</h2>
           <p className="text-sm text-gray-600">
-            Vedavault brings you timeless hair care essentials—crafted with natural ingredients, tradition, and purity for healthy, beautiful hair.
+Smart Formulas 🧬 |  Natural Ingredients 🌱
+<br />
+Where ancient botanical wisdom meets modern science to create effective solutions for everyday self-care.
+ 
           </p>
 
           {/* Social Icons */}

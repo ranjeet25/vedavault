@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Reuseable/Header";
 
 function Distributers() {
+  const navigate = useNavigate();
   // Generate unique 6 digit registration ID
     const generatedRegistrationId = Math.floor(
       100000 + Math.random() * 900000
@@ -19,7 +21,7 @@ function Distributers() {
     ifscCode: "",
     bankName: "",
     branchName: "",
-    registrationId: generatedRegistrationId,
+    distributerId: generatedRegistrationId,
   });
 
   const [errors, setErrors] = useState({});
@@ -195,20 +197,17 @@ function Distributers() {
 
             <p className="mt-4 text-gray-600">
               Thank you for registration. Our team will contact you soon.
+              And will provide you with your unique Distributor ID.
             </p>
 
           
 
             <button
               type="button"
-              onClick={() => {
-                setSuccess(false);
-                setRegistrationId(generatedRegistrationId);
-                setMessage("");
-              }}
+              onClick={() => navigate("/")}
               className="mt-8 rounded-lg bg-primary px-8 py-3 font-semibold text-white transition hover:opacity-90"
             >
-              Register Another Distributor
+              Go to Home Page
             </button>
           </div>
         </div>
