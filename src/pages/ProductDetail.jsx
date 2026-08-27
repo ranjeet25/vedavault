@@ -10,8 +10,11 @@ import {
 import { useCart } from "../context/CartContext";
 //import api from "../api"; // axios instance
 import products from "../data/products";
+import hairOilComboProducts from "../data/hairoil-comboproducts";
+import hairShampooComboProducts from "../data/hairshampoo-comboproducts";
+import aloeVeraFaceComboProducts from "../data/aloveraface-comboproducts";
+import radianceFaceComboProducts from "../data/radinaceface-comboproducts";
 import Footer from "../components/Reuseable/Footer";
-import cart from "../pages/Cart";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -25,7 +28,13 @@ export default function ProductDetail() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const foundProduct = products.find(
+    const foundProduct = [
+      ...products,
+      ...hairOilComboProducts,
+      ...hairShampooComboProducts,
+      ...aloeVeraFaceComboProducts,
+      ...radianceFaceComboProducts,
+    ].find(
       (item) => item.slug === slug || item._id === slug
      
     );
@@ -95,7 +104,7 @@ export default function ProductDetail() {
   };
 
   const handleBuyNow = () => {
-    addToCart(buildCartItem());
+    //addToCart(buildCartItem());
     navigate("/cart");
   };
 

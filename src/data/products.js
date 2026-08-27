@@ -33,14 +33,14 @@ const products = [
             "validTill": "2026-12-31T23:59:59.000Z"
         },
         "images": {
-            "main": "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/21.jpg?updatedAt=1775465009540",
+            "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%201%20Hair%20Oil.jpg?updatedAt=1787158022729",
             "gallery": [
                 "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/21.jpg?updatedAt=1775465009540",
                 "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/2.jpg?updatedAt=1775465010251",
                 "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/4.jpg?updatedAt=1775465010047",
                 "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/3.jpg?updatedAt=1775465010154"
             ],
-            "hover": "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/1.jpg?updatedAt=1775465010085"
+            "hover": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020"
         },
         "availability": {
             "inStock": true,
@@ -141,7 +141,7 @@ const products = [
       "natural shampoo"
     ]
   },
- "stockSoldinLast30Days": 95,
+ "stockSoldinLast30Days": 195,
   "pricing": {
     "sellingprice": 300,
     "mrp": 525,
@@ -159,14 +159,14 @@ const products = [
   },
 
   "images": {
-    "main": "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/s1.jpg?updatedAt=1775464872163",
+    "main": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2013%20image%201%20Shampoo.jpg?updatedAt=1787158025438",
     "gallery": [
       "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/s1.jpg?updatedAt=1775464872163",
       "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/6.jpg?updatedAt=1775464871327",
       "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/8.jpg?updatedAt=1775464872022",
       "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/7.jpg?updatedAt=1775464872118"
     ],
-    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/5.jpg?updatedAt=1775464871309"
+    "hover": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787"
   },
 
   "availability": {
@@ -175,11 +175,6 @@ const products = [
     "sku": "SKU-SHAMPOO-300"
   },
 
-  "purchaseLinks": {
-    "flipkart": "https://dl.flipkart.com/s/YWdksLNNNN",
-    "shopsy": "",
-    "amazon": ""
-  },
 
   "productDetails": {
     "type": "Shampoo",
@@ -245,138 +240,7 @@ const products = [
     "storage": "Store in a cool and dry place"
   }
 },
-{
-    "slug": "black-seed-oil-plus-aloevera-amla-reetha-shikakai-herbal-shampoo-combo",
-  "basicInfo": {
-    "name": "Black Seed Onion Oil 200 ml + Aloe Vera, Amla, Reetha, Shikakai Shampoo 300 ml (2 Items in the set)",
-    "shortDescription": "Complete hair care combo for hair fall control, growth & dandruff reduction",
-    "description": "A powerful herbal hair care combo that combines the nourishing benefits of Black Seed Onion Hair Oil with the deep cleansing properties of Aloe Vera, Amla, Reetha & Shikakai Shampoo. Helps reduce hair fall, strengthen roots, promote growth, and maintain a healthy scalp.",
-    "category": "Hair Care",
-    "subCategory": "Combo",
-    "brand": "Veda Vault",
-    "productCode": "VEDA-COMBO-001",
-    "tags": [
-      "hair care combo",
-      "onion oil",
-      "herbal shampoo",
-      "hair growth",
-      "anti dandruff"
-    ]
-  },
-  "stockSoldinLast30Days": 84,
-  "pricing": {
-    "sellingprice": 300,
-    "mrp": 525,
-    "maxPrice": 599,
-    "currency": "INR",
-    "taxInclusive": true
-  },
-
-  "offers": {
-    "leadSlogan": "New Launch",
-    "discountType": "percentage",
-    "discountValue": 35,
-    "offerLabel": "Best Combo Deal",
-    "validTill": "2026-12-31T23:59:59.000Z"
-  },
-
-  "images": {
-    "main": "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/1%20hair%20oil%20and%20shampoo.jpg?updatedAt=1775464968548",
-    "gallery": [
-      "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/1%20hair%20oil%20and%20shampoo.jpg?updatedAt=1775464968548",
-      "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/10.jpg?updatedAt=1775464968483",
-      "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/12.jpg?updatedAt=1775464967732",
-      "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/11.jpg?updatedAt=1775464968337"
-    ],
-    "hover": "https://ik.imagekit.io/tempvedavault/vedavault/combo-oil-shampoo/9.jpg?updatedAt=1775464968302"
-  },
-
-  "availability": {
-    "inStock": true,
-    "stockCount": 100,
-    "sku": "SKU-COMBO-001"
-  },
-
-  "purchaseLinks": {
-    "flipkart": "https://dl.flipkart.com/s/CvBqrZNNNN",
-    "shopsy": "https://www.shopsy.in/thevedavault-black-seed-onion-oil-200-ml-aloe-vera-amla-reetha-shikakai-shampoo-300-hair/p/itm9432f00ad70f1?pid=TMJHHNG93ZVTXAQH&lid=LSTTMJHHNG93ZVTXAQHFVS7U0&marketplace=FLIPKART&sattr[]=quantity",
-    "amazon": ""
-  },
-
-  "productDetails": {
-    "type": "Combo",
-    "volume": "Hair Oil 200 ml + Shampoo 300 ml",
-
-    "suitableFor": ["All Hair Types"],
-
-    "benefits": [
-      "Reduces hair fall and strengthens roots",
-      "Promotes faster and healthier hair growth",
-      "Deep cleanses scalp and removes buildup",
-      "Reduces dandruff and flakiness",
-      "Improves shine, smoothness, and hair texture"
-    ],
-
-    "ingredients": [
-      {
-        "name": "Red Onion",
-        "benefit": "Boosts hair growth and reduces breakage"
-      },
-      {
-        "name": "Black Seeds",
-        "benefit": "Rich in antioxidants to reduce thinning"
-      },
-      {
-        "name": "Aloe Vera",
-        "benefit": "Soothes scalp and hydrates hair"
-      },
-      {
-        "name": "Amla",
-        "benefit": "Strengthens follicles and prevents greying"
-      },
-      {
-        "name": "Reetha",
-        "benefit": "Natural cleanser that removes dirt gently"
-      },
-      {
-        "name": "Shikakai",
-        "benefit": "Maintains scalp health and adds shine"
-      }
-    ],
-
-    "usage":[
-                "Take 5–15 ml oil depending on hair length",
-                "Apply evenly across the scalp",
-                "Massage gently for 5–10 minutes",
-                "Leave on for night or at least one hour before washing with The Veda Vault Anti Dandruff Shampoo",
-            ],
-
-    "hairConcerns": [
-      "Hair Fall",
-      "Dandruff",
-      "Dry Scalp",
-      "Thinning"
-    ],
-
-    "hairType": [
-      "All"
-    ],
-
-    "freeFrom": [
-      "Paraben-Free",
-      "Sulphate-Free"
-    ],
-
-    "comboProducts": [
-      "Black Seed Onion Hair Oil 200 ml",
-      "Herbal Shampoo 300 ml"
-    ],
-
-    "shelfLife": "24 months",
-    "origin": "India",
-    "storage": "Store in a cool and dry place"
-  }
-},
+  
 {
   "basicInfo": {
     "name": "Neem Aloevera Natural Purifying Cleanses – Refresh – Clear Face Wash 100 ml",
@@ -398,7 +262,7 @@ const products = [
     ]
   },
 
-  "stockSoldinLast30Days": 0,
+  "stockSoldinLast30Days": 310,
 
   "pricing": {
     "sellingprice": 200,
@@ -556,7 +420,7 @@ const products = [
     ]
   },
 
-  "stockSoldinLast30Days": 0,
+  "stockSoldinLast30Days": 220,
 
   "pricing": {
    "sellingprice": 200,
@@ -588,13 +452,6 @@ const products = [
     "sku": "RadianceGlowFaceWash01"
   },
 
-  "purchaseLinks": {
-    "flipkart": "",
-    "shopshy": "",
-    "amazon": ""
-  },
-
-  "_id": "",
   "slug": "radiance-glow-skin-brightening-tan-removal-face-wash-100ml",
 
   "productDetails": {

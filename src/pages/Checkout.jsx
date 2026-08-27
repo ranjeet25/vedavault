@@ -299,7 +299,7 @@ export default function Checkout() {
                   </div>
                 )}
 
-                {codAvailable && (
+                {/* {codAvailable && (
                   <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
@@ -310,7 +310,7 @@ export default function Checkout() {
                     />
                     <span className="font-medium">Cash on Delivery</span>
                   </label>
-                )}
+                )} */}
 
                 <div className="rounded-lg border border-base-300 bg-blue-50 p-5 mt-6">
                   <p className="font-semibold mb-3 text-gray-800">Bank Account Details</p>
