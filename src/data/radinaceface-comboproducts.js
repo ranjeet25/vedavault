@@ -41,9 +41,11 @@ const radinaceface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%206%20image%201%20Radinace.png?updatedAt=1787158102312",
-    "gallery": ["https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%206%20image%201%20Radinace.png?updatedAt=1787158102312",
-      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
-      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798"
+    "gallery": [
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%206%20image%201%20Radinace.png?updatedAt=1787158102312",
+     "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798",
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%204%20Radinace.png?updatedAt=1787158120515"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786"
   },
@@ -157,9 +159,11 @@ const radinaceface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%201%20Radinace.png?updatedAt=1787158102694",
-    "gallery": ["https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%201%20Radinace.png?updatedAt=1787158102694",
+    "gallery": [
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%201%20Radinace.png?updatedAt=1787158102694",
       "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
-      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798"
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798",
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%204%20Radinace.png?updatedAt=1787158120515"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786"
   },
@@ -273,9 +277,11 @@ const radinaceface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%208%20image%201%20Radinace.png?updatedAt=1787158102662",
-    "gallery": ["https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%208%20image%201%20Radinace.png?updatedAt=1787158102662",
+    "gallery": [
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%208%20image%201%20Radinace.png?updatedAt=1787158102662",
       "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
-      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798"
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798",
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%204%20Radinace.png?updatedAt=1787158120515"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786"
   },

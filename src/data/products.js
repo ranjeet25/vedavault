@@ -3,13 +3,13 @@ const products = [
   
     {
         "basicInfo": {
-            "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml",
-            "shortDescription": "Herbal oil for hair fall control & growth",
-            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and  promote healthy, shiny hair.",
+            "name": "Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots (200 ml)",
+            "shortDescription": "Onion Hair Oil for Hair Growth & Hair Fall Control | Natural Herbal Hair Oil for Strong Roots & Thick Hair, Scalp Nourishment | For Men & Women",
+            "description": "Nutrient-rich oil blend of Onion and 8 Cold pressed Oils that provide strengthening care to dull, damaged, weak hair and tired scalp to help transform hair texture and health. ",
             "category": "Hair Care",
             "subCategory": "Hair Oil",
             "brand": "Veda",
-            "productCode": "VEDA-OIL-200",
+            "productCode": "BlackSeedOnionHairOil01",
             "tags": [
                 "hair oil",
                 "onion oil",
@@ -18,7 +18,7 @@ const products = [
             ]
         },
 
-        "stockSoldinLast30Days": 120,
+        "stockSoldinLast30Days": 1100,
         "pricing": {
             "sellingprice": 300,
             "mrp": 325,
@@ -35,16 +35,16 @@ const products = [
         "images": {
             "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%201%20Hair%20Oil.jpg?updatedAt=1787158022729",
             "gallery": [
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/21.jpg?updatedAt=1775465009540",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/2.jpg?updatedAt=1775465010251",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/4.jpg?updatedAt=1775465010047",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/3.jpg?updatedAt=1775465010154"
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%202%20Hair%20Oil.png?updatedAt=1787158097575",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%204%20Hair%20Oil.png?updatedAt=1787158097678",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%201%20Hair%20Oil.jpg?updatedAt=1787158022729"
             ],
             "hover": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020"
         },
         "availability": {
             "inStock": true,
-            "stockCount": 150,
+            "stockCount": 230,
             "sku": "SKU-OIL-200"
         },
 
@@ -127,13 +127,13 @@ const products = [
      {
          "slug": "aloevera-amla-reetha-shikakai-herbal-shampoo-300ml",
   "basicInfo": {
-    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml",
-    "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
-    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots.",
+    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean (300 ml)",
+    "shortDescription": "Aloe Vera, Amla, Reetha & Shikakai Herbal Shampoo | Anti Dandruff & Damage Repair | Natural Hair Growth Shampoo for Strong, Healthy Hair | For Men & Women ",
+    "description": "Aloe Vera, Amla, Reetha, and Shikakai have been trusted in traditional hair care nourishes the scalp and helps maintain natural shine and softness and Natural Hair Growth Shampoo for Strong, Healthy Hair. ",
     "category": "Hair Care",
     "subCategory": "Shampoo",
     "brand": "Veda Vault",
-    "productCode": "VEDA-SHAMPOO-300",
+    "productCode": "AloeVeraAmlaShampoo01",
     "tags": [
       "herbal shampoo",
       "anti dandruff",
@@ -141,7 +141,7 @@ const products = [
       "natural shampoo"
     ]
   },
- "stockSoldinLast30Days": 195,
+ "stockSoldinLast30Days": 1195,
   "pricing": {
     "sellingprice": 300,
     "mrp": 525,
@@ -161,17 +161,17 @@ const products = [
   "images": {
     "main": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2013%20image%201%20Shampoo.jpg?updatedAt=1787158025438",
     "gallery": [
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/s1.jpg?updatedAt=1775464872163",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/6.jpg?updatedAt=1775464871327",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/8.jpg?updatedAt=1775464872022",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/7.jpg?updatedAt=1775464872118"
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%202%20Shampoo.png?updatedAt=1787158101708",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%204%20Shampoo.png?updatedAt=1787158099044",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2013%20image%201%20Shampoo.jpg?updatedAt=1787158025438"
     ],
     "hover": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787"
   },
 
   "availability": {
     "inStock": true,
-    "stockCount": 150,
+    "stockCount": 180,
     "sku": "SKU-SHAMPOO-300"
   },
 
@@ -262,7 +262,7 @@ const products = [
     ]
   },
 
-  "stockSoldinLast30Days": 310,
+  "stockSoldinLast30Days": 1310,
 
   "pricing": {
     "sellingprice": 200,
@@ -281,16 +281,18 @@ const products = [
 
   "images": {
     "main": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/1ALOEVERA.png?updatedAt=1786553130923",
-    "gallery": ["https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415",
+    "gallery": [
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415",
         "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/4ALOEVERA.png?updatedAt=1786553130880",
-        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081"
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081",
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%204%20Aloevera.png?updatedAt=1787158097436"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415"
   },
 
   "availability": {
     "inStock": true,
-    "stockCount": 0,
+    "stockCount": 280,
     "sku": "NeemAloeveraFaceWash01"
   },
 
@@ -420,7 +422,7 @@ const products = [
     ]
   },
 
-  "stockSoldinLast30Days": 220,
+  "stockSoldinLast30Days": 1020,
 
   "pricing": {
    "sellingprice": 200,
@@ -439,16 +441,18 @@ const products = [
 
   "images": {
     "main": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/8RADINACE.png?updatedAt=1786553172991",
-    "gallery": ["https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786",
+    "gallery": [
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786",
       "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/10RADINACE.png?updatedAt=1786553130663",
-      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798"
+      "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/11RADINACE.png?updatedAt=1786553170798",
+      "https://ik.imagekit.io/vedavault/RADINACE%20FACEWASH/Product%207%20image%204%20Radinace.png?updatedAt=1787158120515"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/RADINACE/9RADINACE.png?updatedAt=1786553174786"
   },
 
   "availability": {
     "inStock": true,
-    "stockCount": 0,
+    "stockCount": 124,
     "sku": "RadianceGlowFaceWash01"
   },
 

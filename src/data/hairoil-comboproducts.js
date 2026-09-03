@@ -3,9 +3,9 @@ const hairoil_comboproducts = [
   
  {
         "basicInfo": {
-            "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml | Combo of 3",
-            "shortDescription": "Herbal oil for hair fall control & growth",
-            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and  promote healthy, shiny hair.",
+            "name": "Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots (200 ml) | Combo of 3",
+            "shortDescription": "Onion Hair Oil for Hair Growth & Hair Fall Control | Natural Herbal Hair Oil for Strong Roots & Thick Hair, Scalp Nourishment | For Men & Women",
+            "description": "Nutrient-rich oil blend of Onion and 8 Cold pressed Oils that provide strengthening care to dull, damaged, weak hair and tired scalp to help transform hair texture and health. ",
             "category": "Hair Care",
             "subCategory": "Hair Oil",
             "brand": "Veda",
@@ -18,7 +18,7 @@ const hairoil_comboproducts = [
             ]
         },
 
-        "stockSoldinLast30Days": 120,
+        "stockSoldinLast30Days": 152,
         "pricing": {
             "sellingprice": 840,
             "mrp": 900,
@@ -36,10 +36,10 @@ const hairoil_comboproducts = [
             "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2010%20image%201%20Hair%20Oil.png?updatedAt=1787158096397",
             "gallery": [
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2010%20image%201%20Hair%20Oil.png?updatedAt=1787158096397",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/2.jpg?updatedAt=1775465010251",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/4.jpg?updatedAt=1775465010047",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/3.jpg?updatedAt=1775465010154"
-            ],
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%202%20Hair%20Oil.png?updatedAt=1787158097575",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%204%20Hair%20Oil.png?updatedAt=1787158097678",
+                ],
             "hover": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020"
         },
         "availability": {
@@ -119,9 +119,9 @@ const hairoil_comboproducts = [
     },
 	 {
         "basicInfo": {
-            "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml | Combo of 4",
-            "shortDescription": "Herbal oil for hair fall control & growth",
-            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and  promote healthy, shiny hair.",
+             "name": "Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots (200 ml) | Combo of 4",
+            "shortDescription": "Onion Hair Oil for Hair Growth & Hair Fall Control | Natural Herbal Hair Oil for Strong Roots & Thick Hair, Scalp Nourishment | For Men & Women",
+            "description": "Nutrient-rich oil blend of Onion and 8 Cold pressed Oils that provide strengthening care to dull, damaged, weak hair and tired scalp to help transform hair texture and health. ",
             "category": "Hair Care",
             "subCategory": "Hair Oil",
             "brand": "Veda",
@@ -152,10 +152,10 @@ const hairoil_comboproducts = [
             "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
             "gallery": [
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/2.jpg?updatedAt=1775465010251",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/4.jpg?updatedAt=1775465010047",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/3.jpg?updatedAt=1775465010154"
-            ],
+               "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%202%20Hair%20Oil.png?updatedAt=1787158097575",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%204%20Hair%20Oil.png?updatedAt=1787158097678",
+                ],
             "hover": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020"
         },
         "availability": {
@@ -235,9 +235,9 @@ const hairoil_comboproducts = [
     },
 	 {
         "basicInfo": {
-            "name": " Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots Hair Oil 200 ml | Combo of 5",
-            "shortDescription": "Herbal oil for hair fall control & growth",
-            "description": "This hair oil contains essential herbs that help prevent stress-related hair fall, strengthen hair, stimulate growth, and  promote healthy, shiny hair.",
+            "name": "Black Seed Onion Natural Hair Oil for Hair Growth & Strong Roots (200 ml) | Combo of 5",
+            "shortDescription": "Onion Hair Oil for Hair Growth & Hair Fall Control | Natural Herbal Hair Oil for Strong Roots & Thick Hair, Scalp Nourishment | For Men & Women",
+            "description": "Nutrient-rich oil blend of Onion and 8 Cold pressed Oils that provide strengthening care to dull, damaged, weak hair and tired scalp to help transform hair texture and health. ",
             "category": "Hair Care",
             "subCategory": "Hair Oil",
             "brand": "Veda",
@@ -250,7 +250,7 @@ const hairoil_comboproducts = [
             ]
         },
 
-        "stockSoldinLast30Days": 120,
+        "stockSoldinLast30Days": 91,
         "pricing": {
             "sellingprice": 1000,
             "mrp": 1500,
@@ -268,10 +268,10 @@ const hairoil_comboproducts = [
             "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
             "gallery": [
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/2.jpg?updatedAt=1775465010251",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/4.jpg?updatedAt=1775465010047",
-                "https://ik.imagekit.io/tempvedavault/vedavault/hairoil/3.jpg?updatedAt=1775465010154"
-            ],
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%202%20Hair%20Oil.png?updatedAt=1787158097575",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%204%20Hair%20Oil.png?updatedAt=1787158097678",
+                ],
             "hover": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020"
         },
         "availability": {

@@ -3,9 +3,9 @@ const hairshampoo_comboproducts = [
      {
          "slug": "aloevera-amla-reetha-shikakai-herbal-shampoo-300ml-combo3",
   "basicInfo": {
-    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml | Combo of 3",
-    "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
-    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots.",
+    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean (300 ml) | Combo of 3",
+    "shortDescription": "Aloe Vera, Amla, Reetha & Shikakai Herbal Shampoo | Anti Dandruff & Damage Repair | Natural Hair Growth Shampoo for Strong, Healthy Hair | For Men & Women ",
+    "description": "Aloe Vera, Amla, Reetha, and Shikakai have been trusted in traditional hair care nourishes the scalp and helps maintain natural shine and softness and Natural Hair Growth Shampoo for Strong, Healthy Hair. ",
     "category": "Hair Care",
     "subCategory": "Shampoo",
     "brand": "Veda Vault",
@@ -38,10 +38,10 @@ const hairshampoo_comboproducts = [
     "main": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%201%20Shampoo.png?updatedAt=1787158099871",
     "gallery": [
       "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%201%20Shampoo.png?updatedAt=1787158099871",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/6.jpg?updatedAt=1775464871327",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/8.jpg?updatedAt=1775464872022",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/7.jpg?updatedAt=1775464872118"
-    ],
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%202%20Shampoo.png?updatedAt=1787158101708",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%204%20Shampoo.png?updatedAt=1787158099044",
+      ],
     "hover": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787"
   },
 
@@ -119,9 +119,9 @@ const hairshampoo_comboproducts = [
  {
          "slug": "aloevera-amla-reetha-shikakai-herbal-shampoo-300ml-combo4",
   "basicInfo": {
-    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml | Combo of 4",
-    "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
-    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots.",
+     "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean (300 ml) | Combo of 4",
+    "shortDescription": "Aloe Vera, Amla, Reetha & Shikakai Herbal Shampoo | Anti Dandruff & Damage Repair | Natural Hair Growth Shampoo for Strong, Healthy Hair | For Men & Women ",
+    "description": "Aloe Vera, Amla, Reetha, and Shikakai have been trusted in traditional hair care nourishes the scalp and helps maintain natural shine and softness and Natural Hair Growth Shampoo for Strong, Healthy Hair. ",
     "category": "Hair Care",
     "subCategory": "Shampoo",
     "brand": "Veda Vault",
@@ -154,10 +154,10 @@ const hairshampoo_comboproducts = [
     "main": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%201%20Shampoo.png?updatedAt=1787158101153",
     "gallery": [
       "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%201%20Shampoo.png?updatedAt=1787158101153",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/6.jpg?updatedAt=1775464871327",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/8.jpg?updatedAt=1775464872022",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/7.jpg?updatedAt=1775464872118"
-    ],
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%202%20Shampoo.png?updatedAt=1787158101708",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%204%20Shampoo.png?updatedAt=1787158099044",
+      ],
     "hover": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787"
   },
 
@@ -235,13 +235,13 @@ const hairshampoo_comboproducts = [
 {
          "slug": "aloevera-amla-reetha-shikakai-herbal-shampoo-300ml-combo5",
   "basicInfo": {
-    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean 300 ml | Combo of 5",
-    "shortDescription": "Herbal shampoo for dandruff control & deep cleansing",
-    "description": "This herbal shampoo is enriched with Aloe Vera, Amla, Reetha, and Shikakai to deeply cleanse the scalp, reduce dandruff, strengthen hair roots.",
+    "name": "Aloe Vera, Amla, Reetha, Shikakai Natural Shampoo | Anti Dandruff & Deep Clean (300 ml) | Combo of 5",
+    "shortDescription": "Aloe Vera, Amla, Reetha & Shikakai Herbal Shampoo | Anti Dandruff & Damage Repair | Natural Hair Growth Shampoo for Strong, Healthy Hair | For Men & Women ",
+    "description": "Aloe Vera, Amla, Reetha, and Shikakai have been trusted in traditional hair care nourishes the scalp and helps maintain natural shine and softness and Natural Hair Growth Shampoo for Strong, Healthy Hair. ",
     "category": "Hair Care",
     "subCategory": "Shampoo",
     "brand": "Veda Vault",
-    "productCode": "AloeVeraAmlaShampoo04",
+    "productCode": "AloeVeraAmlaShampoo05",
     "tags": [
       "herbal shampoo",
       "anti dandruff",
@@ -270,10 +270,10 @@ const hairshampoo_comboproducts = [
     "main": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%201%20Shampoo.png?updatedAt=1787158100571",
     "gallery": [
       "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%201%20Shampoo.png?updatedAt=1787158100571",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/6.jpg?updatedAt=1775464871327",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/8.jpg?updatedAt=1775464872022",
-      "https://ik.imagekit.io/tempvedavault/vedavault/shampoo/7.jpg?updatedAt=1775464872118"
-    ],
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2016%20image%202%20Shampoo.png?updatedAt=1787158101708",
+      "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2014%20image%204%20Shampoo.png?updatedAt=1787158099044",
+      ],
     "hover": "https://ik.imagekit.io/vedavault/Hair%20Shampoo/Product%2015%20image%203%20Shampoo.png?updatedAt=1787158102787"
   },
 

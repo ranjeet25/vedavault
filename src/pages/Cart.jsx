@@ -93,7 +93,7 @@ export default function Cart() {
             </h3>
 
             <div className="flex justify-between mb-2 text-sm">
-              <span>Subtotal</span>
+              <span>Total</span>
               <span>₹{subtotal}</span>
             </div>
 
@@ -105,7 +105,7 @@ export default function Cart() {
             <div className="border-t my-4"></div>
 
             <div className="flex justify-between font-semibold text-lg mb-6">
-              <span>Total</span>
+              <span>Amout to Pay</span>
               <span>₹{subtotal}</span>
             </div>
 

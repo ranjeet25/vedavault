@@ -213,7 +213,7 @@ export default function ProductDetail() {
             </div>
           </div>
           <span className="text-xs ">
-            <span className="text-pink-600 font-bold bg-pink-200 px-2 py-1 rounded-full">Available stock: As per vendor</span>
+            <span className="text-pink-600 font-bold bg-pink-200 px-2 py-1 rounded-full">Product availabe: Yes</span>
           </span>
 
 

@@ -40,9 +40,11 @@ const aloveraface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%202%20image%201%20Aloevera.png?updatedAt=1787158098757",
-    "gallery": ["https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%202%20image%201%20Aloevera.png?updatedAt=1787158098757",
+    "gallery": [
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%202%20image%201%20Aloevera.png?updatedAt=1787158098757",
         "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/4ALOEVERA.png?updatedAt=1786553130880",
-        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081"
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081",
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%204%20Aloevera.png?updatedAt=1787158097436"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415"
   },
@@ -159,8 +161,11 @@ const aloveraface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%201%20Aloevera.png?updatedAt=1787158102294",
-    "gallery": ["https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%201%20Aloevera.png?updatedAt=1787158102294",
-        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081"
+    "gallery": [
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%201%20Aloevera.png?updatedAt=1787158102294",
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/4ALOEVERA.png?updatedAt=1786553130880",
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081",
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%204%20Aloevera.png?updatedAt=1787158097436"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415"
   },
@@ -278,8 +283,11 @@ const aloveraface_comboproducts = [
 
   "images": {
     "main": "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%204%20image%201%20Aloevera.png?updatedAt=1787158101665",
-    "gallery": ["https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%204%20image%201%20Aloevera.png?updatedAt=1787158101665",
-        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081"
+    "gallery": [
+      "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%204%20image%201%20Aloevera.png?updatedAt=1787158101665",
+         "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/4ALOEVERA.png?updatedAt=1786553130880",
+        "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/3ALOEVERA.png?updatedAt=1786553131081",
+        "https://ik.imagekit.io/vedavault/ALOEVERA%20FACEWASH/Product%203%20image%204%20Aloevera.png?updatedAt=1787158097436"
     ],
     "hover": "https://ik.imagekit.io/tempvedavault/vedavault/ALOVERA-FACE/2ALOEVERA.png?updatedAt=1786553132415"
   },
