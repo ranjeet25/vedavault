@@ -22,7 +22,7 @@ function Footer() {
           <p className="text-sm text-gray-600">
 Smart Formulas 🧬 |  Natural Ingredients 🌱
 <br />
-Where ancient botanical wisdom meets modern science to create effective solutions for everyday self-care.
+ <b>Vedavault</b>  - Where ancient botanical wisdom meets modern science to create effective solutions for everyday self-care.
  
           </p>
 
@@ -47,7 +47,7 @@ Where ancient botanical wisdom meets modern science to create effective solution
         <div>
           <h3 className="font-semibold mb-4">Customer Service</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:underline cursor-pointer">Contact Us</li>
+            <li className="hover:underline cursor-pointer"> Mail us - customercarethevedavault@gmail.com</li>
             <li className="hover:underline cursor-pointer">FAQs</li>
             <li className="hover:underline cursor-pointer">Shipping Policy</li>
             <li className="hover:underline cursor-pointer">Return & Refund</li>

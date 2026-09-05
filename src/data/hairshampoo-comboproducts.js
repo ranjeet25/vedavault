@@ -251,7 +251,7 @@ const hairshampoo_comboproducts = [
   },
  "stockSoldinLast30Days": 35,
   "pricing": {
-    "sellingprice": 1000,
+    "sellingprice": 1080,
     "mrp": 1500,
     "maxPrice": 349,
     "currency": "INR",

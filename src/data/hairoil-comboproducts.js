@@ -252,7 +252,7 @@ const hairoil_comboproducts = [
 
         "stockSoldinLast30Days": 91,
         "pricing": {
-            "sellingprice": 1000,
+            "sellingprice": 1080,
             "mrp": 1500,
             "currency": "INR",
             "taxInclusive": true
@@ -265,9 +265,9 @@ const hairoil_comboproducts = [
             "validTill": "2026-12-31T23:59:59.000Z"
         },
         "images": {
-            "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
+            "main": "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2012%20image%201%20Hair%20Oil.png?updatedAt=1787158099123",
             "gallery": [
-                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%201%20Hair%20Oil.png?updatedAt=1787158098789",
+                "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2012%20image%201%20Hair%20Oil.png?updatedAt=1787158099123",
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%203%20Hair%20Oil.png?updatedAt=1787158103020",
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%2011%20image%202%20Hair%20Oil.png?updatedAt=1787158097575",
                 "https://ik.imagekit.io/vedavault/HAIR%20OIL/Product%209%20image%204%20Hair%20Oil.png?updatedAt=1787158097678",
